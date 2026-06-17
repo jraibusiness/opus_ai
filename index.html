@@ -1,290 +1,224 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- ===== SEO ===== -->
-  <title>Opus AI — Automação Inteligente para Instituições Culturais</title>
-  <meta name="description" content="A Opus AI cria sistemas de automação com IA que eliminam processos manuais, reduzem custos e devolvem tempo às equipes. Especialistas em instituições culturais e terceiro setor.">
-  <meta name="keywords" content="automação com IA, n8n, AI agents, automação de processos, instituições culturais, terceiro setor, inteligência artificial Brasil">
+  <!-- ===== SEO (default: English; updated per language via JS) ===== -->
+  <title>Opus AI — Intelligent Automation for Cultural Institutions</title>
+  <meta name="description" content="Opus AI builds AI automation systems that remove manual processes, cut costs and give time back to teams. Specialists in cultural institutions and the nonprofit sector.">
+  <meta name="keywords" content="AI automation, n8n, AI agents, process automation, cultural institutions, nonprofit, artificial intelligence Brazil">
   <meta name="author" content="Opus AI">
   <meta name="theme-color" content="#0A0A0F">
   <link rel="canonical" href="https://opusai.com.br/">
 
   <!-- ===== Open Graph ===== -->
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="pt_BR">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="pt_BR">
+  <meta property="og:locale:alternate" content="es_ES">
+  <meta property="og:locale:alternate" content="de_DE">
   <meta property="og:site_name" content="Opus AI">
-  <meta property="og:title" content="Opus AI — Tecnologia com Alma Criativa">
-  <meta property="og:description" content="Automação inteligente para quem não quer perder tempo com tecnologia. Cases reais, resultados mensuráveis.">
+  <meta property="og:title" content="Opus AI — Technology with a Creative Soul">
+  <meta property="og:description" content="Intelligent automation for those who don't want to waste time on technology. Real cases, measurable results.">
   <meta property="og:url" content="https://opusai.com.br/">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Opus AI — Tecnologia com Alma Criativa">
-  <meta name="twitter:description" content="Automação inteligente para quem não quer perder tempo com tecnologia. Cases reais, resultados mensuráveis.">
+  <meta name="twitter:title" content="Opus AI — Technology with a Creative Soul">
+  <meta name="twitter:description" content="Intelligent automation for those who don't want to waste time on technology. Real cases, measurable results.">
 
-  <!-- ===== Favicon (inline SVG) ===== -->
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230A0A0F'/%3E%3Cpath d='M16 6l8 10-8 10-8-10z' fill='none' stroke='%23C8A96E' stroke-width='1.6'/%3E%3C/svg%3E">
+  <!-- ===== Favicon (Opus AI mark, inline SVG) ===== -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230A0A0F'/%3E%3Ccircle cx='50' cy='50' r='38' fill='none' stroke='%23C8A96E' stroke-width='2.4'/%3E%3Cpath d='M31 62 C35 50 37 44 39 37 L50 52 L61 37 C63 44 65 50 69 62' fill='none' stroke='%23C8A96E' stroke-width='2.3' stroke-linejoin='round'/%3E%3Ccircle cx='39' cy='37' r='3' fill='%23C8A96E'/%3E%3Ccircle cx='61' cy='37' r='3' fill='%23C8A96E'/%3E%3Ccircle cx='50' cy='52' r='3.8' fill='%23C8A96E'/%3E%3C/svg%3E">
 
   <!-- ===== Fonts ===== -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-  <!-- ===== Structured data (JSON-LD) ===== -->
+  <!-- ===== Structured data ===== -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Opus AI",
-    "description": "Automação inteligente com IA para instituições culturais e organizações do terceiro setor.",
+    "description": "Intelligent AI automation for cultural institutions and nonprofit organizations.",
     "url": "https://opusai.com.br",
     "email": "contato@opusai.com.br",
-    "slogan": "Tecnologia com Alma Criativa",
+    "slogan": "Technology with a Creative Soul",
     "founder": { "@type": "Person", "name": "João Rocha" },
     "areaServed": "BR",
-    "knowsAbout": ["Automação de processos", "Integração de ferramentas", "AI Agents", "n8n", "Inteligência Artificial"]
+    "sameAs": ["https://www.linkedin.com/showcase/134414056/"],
+    "knowsAbout": ["Process automation", "Tool integration", "AI Agents", "n8n", "Artificial Intelligence"]
   }
   </script>
 
   <style>
     /* ========== TOKENS ========== */
     :root {
-      --bg:        #0A0A0F;   /* fundo principal */
-      --surface:   #1A1A2E;   /* cards / seções alternadas */
-      --surface-2: #12121d;   /* sutil */
-      --text:      #F0EDE6;   /* off-white quente */
-      --muted:     #9b988f;   /* texto secundário */
-      --gold:      #C8A96E;   /* accent dourado */
+      --bg:        #0A0A0F;
+      --surface:   #1A1A2E;
+      --surface-2: #12121d;
+      --text:      #F0EDE6;
+      --muted:     #9b988f;
+      --gold:      #C8A96E;
       --gold-soft: rgba(200,169,110,.14);
-      --blue:      #2D5BE3;   /* accent secundário (CTA técnico) */
+      --blue:      #2D5BE3;
       --border:    rgba(240,237,230,.10);
       --maxw: 1180px;
       --r: 16px;
       --ease: cubic-bezier(.22,.61,.36,1);
-
       --font-display: 'Playfair Display', Georgia, serif;
       --font-body: 'Inter', system-ui, -apple-system, sans-serif;
       --font-mono: 'JetBrains Mono', ui-monospace, monospace;
     }
-
     *, *::before, *::after { box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-    }
-
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
     body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--text);
-      font-family: var(--font-body);
-      font-weight: 300;
-      line-height: 1.65;
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
-      overflow-x: hidden;
+      margin: 0; background: var(--bg); color: var(--text);
+      font-family: var(--font-body); font-weight: 300; line-height: 1.65;
+      -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; overflow-x: hidden;
     }
-
     h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.12; margin: 0; letter-spacing: -.01em; }
-
     a { color: inherit; text-decoration: none; }
-
     p { margin: 0; }
-
     img, svg { display: block; max-width: 100%; }
-
     ::selection { background: var(--gold); color: #0A0A0F; }
-
-    /* Visible keyboard focus everywhere */
     a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
-      outline: 2px solid var(--gold);
-      outline-offset: 3px;
-      border-radius: 4px;
+      outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 4px;
     }
-
-    .skip-link {
-      position: absolute; left: -999px; top: 0; z-index: 200;
-      background: var(--gold); color: #0A0A0F; padding: 12px 18px; font-weight: 600;
-    }
+    .skip-link { position: absolute; left: -999px; top: 0; z-index: 200; background: var(--gold); color: #0A0A0F; padding: 12px 18px; font-weight: 600; }
     .skip-link:focus { left: 12px; top: 12px; border-radius: 8px; }
 
     /* ========== LAYOUT ========== */
     .wrap { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
-
     section { padding: clamp(72px, 11vw, 140px) 0; position: relative; }
-
     .eyebrow {
-      font-family: var(--font-mono);
-      font-size: .72rem;
-      letter-spacing: .22em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 18px;
-      display: inline-flex; align-items: center; gap: 10px;
+      font-family: var(--font-mono); font-size: .72rem; letter-spacing: .22em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 18px; display: inline-flex; align-items: center; gap: 10px;
     }
     .eyebrow::before { content:""; width: 26px; height: 1px; background: var(--gold); opacity: .6; }
-
     .section-title { font-size: clamp(1.9rem, 4.4vw, 3rem); max-width: 18ch; }
-    .section-lead { color: var(--muted); max-width: 56ch; margin-top: 18px; font-size: 1.05rem; }
 
     /* ========== HEADER ========== */
-    header {
-      position: fixed; inset: 0 0 auto 0; z-index: 100;
-      transition: background .4s var(--ease), backdrop-filter .4s var(--ease), border-color .4s var(--ease);
-      border-bottom: 1px solid transparent;
-    }
-    header.scrolled {
-      background: rgba(10,10,15,.72);
-      backdrop-filter: blur(14px) saturate(140%);
-      -webkit-backdrop-filter: blur(14px) saturate(140%);
-      border-bottom-color: var(--border);
-    }
-    .nav { display: flex; align-items: center; justify-content: space-between; height: 76px; }
-
-    .brand { display: flex; align-items: center; gap: 11px; font-family: var(--font-display); font-size: 1.32rem; font-weight: 600; letter-spacing: .01em; }
-    .brand .mark { width: 26px; height: 26px; flex: none; }
+    header { position: fixed; inset: 0 0 auto 0; z-index: 100; transition: background .4s var(--ease), backdrop-filter .4s var(--ease), border-color .4s var(--ease); border-bottom: 1px solid transparent; }
+    header.scrolled { background: rgba(10,10,15,.72); backdrop-filter: blur(14px) saturate(140%); -webkit-backdrop-filter: blur(14px) saturate(140%); border-bottom-color: var(--border); }
+    .nav { display: flex; align-items: center; justify-content: space-between; height: 76px; gap: 18px; }
+    .brand { display: flex; align-items: center; gap: 12px; font-family: var(--font-display); font-size: 1.32rem; font-weight: 600; letter-spacing: .01em; }
+    .brand .mark { width: 38px; height: 38px; flex: none; }
     .brand b { color: var(--gold); font-weight: 600; }
-
     .nav-links { display: flex; align-items: center; gap: 34px; }
     .nav-links a { color: var(--muted); font-size: .92rem; font-weight: 400; transition: color .2s var(--ease); position: relative; }
-    .nav-links a::after {
-      content:""; position:absolute; left:0; bottom:-6px; width:0; height:1px; background: var(--gold); transition: width .25s var(--ease);
-    }
+    .nav-links a::after { content:""; position:absolute; left:0; bottom:-6px; width:0; height:1px; background: var(--gold); transition: width .25s var(--ease); }
     .nav-links a:hover { color: var(--text); }
     .nav-links a:hover::after { width: 100%; }
+    .nav-right { display: flex; align-items: center; gap: 14px; }
 
     .btn {
       display: inline-flex; align-items: center; gap: 10px; cursor: pointer;
       font-family: var(--font-body); font-size: .92rem; font-weight: 500;
-      padding: 12px 22px; border-radius: 999px; border: 1px solid var(--border);
-      background: transparent; color: var(--text);
+      padding: 12px 22px; border-radius: 999px; border: 1px solid var(--border); background: transparent; color: var(--text);
       transition: background .25s var(--ease), border-color .25s var(--ease), transform .25s var(--ease), color .25s var(--ease);
     }
     .btn:hover { transform: translateY(-2px); }
     .btn-gold { background: var(--gold); color: #0A0A0F; border-color: var(--gold); font-weight: 600; }
     .btn-gold:hover { background: #d8bd86; box-shadow: 0 12px 30px -12px rgba(200,169,110,.6); }
     .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
-
-    .nav-cta { display: inline-flex; }
     .menu-toggle { display: none; background: none; border: 0; color: var(--text); cursor: pointer; padding: 8px; }
+
+    /* ========== LANGUAGE SWITCHER ========== */
+    .lang { position: relative; }
+    .lang-btn {
+      display: inline-flex; align-items: center; gap: 8px; cursor: pointer;
+      border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px;
+      background: transparent; color: var(--text); font-family: var(--font-mono); font-size: .78rem; letter-spacing: .06em;
+      transition: border-color .25s var(--ease), color .25s var(--ease);
+    }
+    .lang-btn:hover { border-color: var(--gold); color: var(--gold); }
+    .lang-btn svg { width: 16px; height: 16px; }
+    .lang-btn .chev { width: 12px; height: 12px; transition: transform .25s var(--ease); }
+    .lang-btn[aria-expanded="true"] .chev { transform: rotate(180deg); }
+    .lang-menu {
+      position: absolute; right: 0; top: calc(100% + 10px); min-width: 168px;
+      background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 6px;
+      display: grid; gap: 2px; z-index: 130;
+      opacity: 0; transform: translateY(-8px); pointer-events: none; transition: opacity .2s var(--ease), transform .2s var(--ease);
+      box-shadow: 0 24px 50px -20px rgba(0,0,0,.7);
+    }
+    .lang-menu.open { opacity: 1; transform: none; pointer-events: auto; }
+    .lang-opt {
+      display: flex; align-items: center; gap: 10px; width: 100%; text-align: left;
+      background: transparent; border: 0; color: var(--muted); padding: 10px 12px; border-radius: 8px; cursor: pointer;
+      font-family: var(--font-body); font-size: .92rem; transition: background .2s var(--ease), color .2s var(--ease);
+    }
+    .lang-opt:hover { background: var(--gold-soft); color: var(--text); }
+    .lang-opt[aria-current="true"] { color: var(--gold); }
+    .lang-opt .code { font-family: var(--font-mono); font-size: .7rem; color: var(--muted); margin-left: auto; letter-spacing: .08em; }
+    .lang-opt[aria-current="true"] .code { color: var(--gold); }
 
     /* ========== HERO ========== */
     .hero { padding-top: clamp(140px, 22vh, 220px); padding-bottom: clamp(80px, 12vw, 150px); overflow: hidden; }
     .hero-inner { max-width: 920px; }
-    .hero h1 {
-      font-size: clamp(2.5rem, 7vw, 5rem);
-      letter-spacing: -.02em;
-    }
+    .hero h1 { font-size: clamp(2.5rem, 7vw, 5rem); letter-spacing: -.02em; }
     .hero h1 .accent { color: var(--gold); font-style: italic; }
     .hero-sub { color: var(--muted); font-size: clamp(1.05rem, 2vw, 1.3rem); max-width: 60ch; margin-top: 28px; font-weight: 300; }
     .hero-actions { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 42px; }
-
-    /* musical-staff animated line */
     .staff { position: absolute; left: 0; right: 0; top: 38%; height: 160px; z-index: 0; pointer-events: none; opacity: .55; }
     .staff svg { width: 100%; height: 100%; }
     .staff .line { stroke: var(--gold); stroke-width: 1; fill: none; opacity: .25; }
-    .staff .pulse {
-      stroke: var(--gold); stroke-width: 1.6; fill: none;
-      stroke-dasharray: 8 1400; stroke-dashoffset: 0;
-      filter: drop-shadow(0 0 6px rgba(200,169,110,.6));
-      animation: trace 7s linear infinite;
-    }
+    .staff .pulse { stroke: var(--gold); stroke-width: 1.6; fill: none; stroke-dasharray: 8 1400; stroke-dashoffset: 0; filter: drop-shadow(0 0 6px rgba(200,169,110,.6)); animation: trace 7s linear infinite; }
     .staff .note { fill: var(--gold); opacity: 0; animation: blink 7s linear infinite; }
     @keyframes trace { from { stroke-dashoffset: 1408; } to { stroke-dashoffset: 0; } }
     @keyframes blink { 0%,100%{opacity:0} 48%,52%{opacity:.9} }
     .hero .wrap { position: relative; z-index: 1; }
-
     @media (prefers-reduced-motion: reduce) {
       .staff .pulse, .staff .note { animation: none; }
       .staff .pulse { stroke-dasharray: none; opacity:.4; }
     }
 
-    /* ========== PILLARS / SOBRE ========== */
+    /* ========== PILLARS ========== */
     .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 56px; }
-    .pillar {
-      background: var(--surface); border: 1px solid var(--border); border-radius: var(--r);
-      padding: 34px 30px; transition: transform .3s var(--ease), border-color .3s var(--ease);
-    }
+    .pillar { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); padding: 34px 30px; transition: transform .3s var(--ease), border-color .3s var(--ease); }
     .pillar:hover { transform: translateY(-4px); border-color: rgba(200,169,110,.4); }
-    .icon-badge {
-      width: 50px; height: 50px; border-radius: 12px; display: grid; place-items: center;
-      background: var(--gold-soft); color: var(--gold); margin-bottom: 22px;
-    }
+    .icon-badge { width: 50px; height: 50px; border-radius: 12px; display: grid; place-items: center; background: var(--gold-soft); color: var(--gold); margin-bottom: 22px; }
     .icon-badge svg { width: 24px; height: 24px; }
     .pillar h3 { font-size: 1.28rem; margin-bottom: 12px; }
     .pillar p { color: var(--muted); font-size: .97rem; }
-
-    .founder {
-      margin-top: 52px; padding: 30px 34px; border-left: 2px solid var(--gold);
-      background: linear-gradient(90deg, var(--gold-soft), transparent);
-      border-radius: 0 var(--r) var(--r) 0;
-      color: var(--muted); font-size: 1.05rem; max-width: 70ch;
-    }
+    .founder { margin-top: 52px; padding: 30px 34px; border-left: 2px solid var(--gold); background: linear-gradient(90deg, var(--gold-soft), transparent); border-radius: 0 var(--r) var(--r) 0; color: var(--muted); font-size: 1.05rem; max-width: 70ch; }
     .founder b { color: var(--text); font-weight: 500; }
 
     /* ========== SERVICES ========== */
     .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; margin-top: 56px; }
-    .service {
-      background: var(--surface); border: 1px solid var(--border); border-radius: var(--r);
-      padding: 38px 34px; position: relative; overflow: hidden;
-      transition: transform .3s var(--ease), border-color .3s var(--ease);
-    }
-    .service::after {
-      content:""; position:absolute; inset:0; border-radius: var(--r);
-      background: radial-gradient(420px circle at var(--mx,50%) var(--my,0%), rgba(45,91,227,.10), transparent 60%);
-      opacity:0; transition: opacity .4s var(--ease); pointer-events:none;
-    }
+    .service { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); padding: 38px 34px; position: relative; overflow: hidden; transition: transform .3s var(--ease), border-color .3s var(--ease); }
+    .service::after { content:""; position:absolute; inset:0; border-radius: var(--r); background: radial-gradient(420px circle at var(--mx,50%) var(--my,0%), rgba(45,91,227,.10), transparent 60%); opacity:0; transition: opacity .4s var(--ease); pointer-events:none; }
     .service:hover { transform: translateY(-4px); border-color: rgba(45,91,227,.45); }
     .service:hover::after { opacity: 1; }
     .service h3 { font-size: 1.42rem; margin-bottom: 14px; }
     .service p { color: var(--muted); font-size: .98rem; }
     .service .icon-badge { background: rgba(45,91,227,.12); color: #7c9bff; }
     .stack-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
-    .tag {
-      font-family: var(--font-mono); font-size: .72rem; letter-spacing: .02em;
-      color: var(--muted); border: 1px solid var(--border); border-radius: 999px; padding: 5px 12px;
-    }
+    .tag { font-family: var(--font-mono); font-size: .72rem; letter-spacing: .02em; color: var(--muted); border: 1px solid var(--border); border-radius: 999px; padding: 5px 12px; }
 
     /* ========== CASES ========== */
     .cases { display: grid; gap: 22px; margin-top: 56px; }
-    .case {
-      display: grid; grid-template-columns: 1.15fr 1fr; gap: 0;
-      background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); overflow: hidden;
-      transition: border-color .3s var(--ease);
-    }
+    .case { display: grid; grid-template-columns: 1.15fr 1fr; background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); overflow: hidden; transition: border-color .3s var(--ease); }
     .case:hover { border-color: rgba(200,169,110,.4); }
     .case-main { padding: 40px 38px; }
-    .case-side {
-      padding: 40px 38px; background: var(--surface-2);
-      border-left: 1px solid var(--border); display: flex; flex-direction: column; justify-content: center; gap: 18px;
-    }
+    .case-side { padding: 40px 38px; background: var(--surface-2); border-left: 1px solid var(--border); display: flex; flex-direction: column; justify-content: center; gap: 18px; }
     .case-cat { font-family: var(--font-mono); font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); }
     .case h3 { font-size: 1.7rem; margin: 14px 0 22px; }
-    .badge-status {
-      display: inline-block; margin-left: 10px; vertical-align: middle;
-      font-family: var(--font-mono); font-size: .6rem; letter-spacing: .08em; text-transform: uppercase;
-      color: var(--blue); border: 1px solid rgba(45,91,227,.4); border-radius: 999px; padding: 3px 9px;
-    }
+    .badge-status { display: inline-block; margin-left: 10px; vertical-align: middle; font-family: var(--font-mono); font-size: .6rem; letter-spacing: .08em; text-transform: uppercase; color: var(--blue); border: 1px solid rgba(45,91,227,.4); border-radius: 999px; padding: 3px 9px; }
     .case-block { margin-bottom: 18px; }
     .case-block .label { font-family: var(--font-mono); font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
     .case-block p { color: #cdc9c0; font-size: .96rem; }
-    .result {
-      font-family: var(--font-display); font-size: 1.32rem; color: var(--gold); line-height: 1.3;
-    }
-    .result span { display:block; font-family: var(--font-body); font-size: .8rem; color: var(--muted); letter-spacing: .14em; text-transform: uppercase; margin-bottom: 10px; }
+    .result { font-family: var(--font-display); font-size: 1.32rem; color: var(--gold); line-height: 1.3; }
+    .result .result-label { display:block; font-family: var(--font-body); font-size: .8rem; color: var(--muted); letter-spacing: .14em; text-transform: uppercase; margin-bottom: 10px; }
     .result b { color: #ffd98a; font-weight: 600; }
     .case-stack { display: flex; flex-wrap: wrap; gap: 8px; }
-
     .cases-note { text-align: center; color: var(--muted); font-family: var(--font-mono); font-size: .82rem; margin-top: 34px; opacity: .8; }
 
     /* ========== STACK ========== */
     .stack-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin-top: 56px; }
-    .stack-item {
-      background: var(--surface-2); border: 1px solid var(--border); border-radius: 14px;
-      padding: 26px 14px; text-align: center; transition: transform .25s var(--ease), border-color .25s var(--ease), background .25s var(--ease);
-    }
+    .stack-item { background: var(--surface-2); border: 1px solid var(--border); border-radius: 14px; padding: 26px 14px; text-align: center; transition: transform .25s var(--ease), border-color .25s var(--ease), background .25s var(--ease); }
     .stack-item:hover { transform: translateY(-3px); border-color: rgba(200,169,110,.4); background: var(--surface); }
     .stack-item .si-icon { width: 30px; height: 30px; margin: 0 auto 14px; color: var(--gold); }
     .stack-item span { font-family: var(--font-mono); font-size: .8rem; color: var(--text); }
@@ -297,14 +231,10 @@
     .contact-links a { display: inline-flex; align-items: center; gap: 12px; color: var(--muted); transition: color .2s var(--ease); width: fit-content; }
     .contact-links a:hover { color: var(--gold); }
     .contact-links svg { width: 18px; height: 18px; }
-
     form { display: grid; gap: 18px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); padding: 36px; }
     .field { display: grid; gap: 8px; }
     .field label { font-size: .82rem; color: var(--muted); font-family: var(--font-mono); letter-spacing: .04em; }
-    .field input, .field textarea {
-      width: 100%; background: var(--bg); border: 1px solid var(--border); border-radius: 10px;
-      padding: 13px 15px; color: var(--text); font-family: var(--font-body); font-size: .96rem; transition: border-color .2s var(--ease);
-    }
+    .field input, .field textarea { width: 100%; background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 13px 15px; color: var(--text); font-family: var(--font-body); font-size: .96rem; transition: border-color .2s var(--ease); }
     .field input:focus, .field textarea:focus { outline: none; border-color: var(--gold); }
     .field textarea { resize: vertical; min-height: 110px; }
     form .btn-gold { justify-content: center; width: 100%; margin-top: 6px; }
@@ -324,20 +254,14 @@
     .footer-links a:hover { color: var(--text); }
     .copy { width: 100%; text-align: center; color: var(--muted); font-size: .8rem; margin-top: 36px; padding-top: 24px; border-top: 1px solid var(--border); font-family: var(--font-mono); letter-spacing: .03em; }
 
-    /* ========== REVEAL ANIMATION ========== */
+    /* ========== REVEAL ========== */
     .reveal { opacity: 0; transform: translateY(26px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
     .reveal.in { opacity: 1; transform: none; }
-    .reveal.d1 { transition-delay: .08s; }
-    .reveal.d2 { transition-delay: .16s; }
-    .reveal.d3 { transition-delay: .24s; }
-    @media (prefers-reduced-motion: reduce) {
-      .reveal { opacity: 1; transform: none; transition: none; }
-    }
+    .reveal.d1 { transition-delay: .08s; } .reveal.d2 { transition-delay: .16s; } .reveal.d3 { transition-delay: .24s; }
+    @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
 
     /* ========== RESPONSIVE ========== */
-    @media (max-width: 1200px) {
-      .stack-grid { grid-template-columns: repeat(4, 1fr); }
-    }
+    @media (max-width: 1200px) { .stack-grid { grid-template-columns: repeat(4, 1fr); } }
     @media (max-width: 900px) {
       .case { grid-template-columns: 1fr; }
       .case-side { border-left: 0; border-top: 1px solid var(--border); }
@@ -345,59 +269,88 @@
     }
     @media (max-width: 768px) {
       .nav-links { display: none; }
-      .nav-cta { display: none; }
+      .nav-right { display: none; }
       .menu-toggle { display: inline-flex; }
       .pillars { grid-template-columns: 1fr; }
       .grid-2 { grid-template-columns: 1fr; }
       .stack-grid { grid-template-columns: repeat(2, 1fr); }
       .staff { display: none; }
-
-      /* mobile dropdown menu */
       .mobile-menu {
         position: fixed; inset: 76px 0 auto 0; z-index: 99;
-        background: rgba(10,10,15,.97); backdrop-filter: blur(14px);
-        border-bottom: 1px solid var(--border);
+        background: rgba(10,10,15,.97); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border);
         display: grid; gap: 4px; padding: 18px 24px 26px;
         transform: translateY(-12px); opacity: 0; pointer-events: none; transition: opacity .3s var(--ease), transform .3s var(--ease);
       }
       .mobile-menu.open { opacity: 1; transform: none; pointer-events: auto; }
-      .mobile-menu a { padding: 14px 6px; color: var(--text); font-size: 1.05rem; border-bottom: 1px solid var(--border); }
+      .mobile-menu > a { padding: 14px 6px; color: var(--text); font-size: 1.05rem; border-bottom: 1px solid var(--border); }
       .mobile-menu .btn-gold { margin-top: 14px; justify-content: center; }
+      .lang-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 4px; }
+      .lang-row button { flex: 1; min-width: 64px; padding: 10px; border: 1px solid var(--border); border-radius: 10px; background: transparent; color: var(--muted); font-family: var(--font-mono); font-size: .78rem; cursor: pointer; }
+      .lang-row button[aria-current="true"] { border-color: var(--gold); color: var(--gold); }
     }
     @media (min-width: 769px) { .mobile-menu { display: none; } }
   </style>
 </head>
 <body>
-  <a href="#main" class="skip-link">Pular para o conteúdo</a>
+  <a href="#main" class="skip-link" data-i18n="skip">Skip to content</a>
 
   <!-- ============ HEADER ============ -->
   <header id="header">
     <div class="wrap nav">
-      <a href="#top" class="brand" aria-label="Opus AI — página inicial">
-        <svg class="mark" viewBox="0 0 32 32" aria-hidden="true">
-          <rect width="32" height="32" rx="7" fill="#1A1A2E"/>
-          <path d="M16 5l9 11-9 11-9-11z" fill="none" stroke="#C8A96E" stroke-width="1.6"/>
-          <circle cx="16" cy="16" r="2.4" fill="#C8A96E"/>
+      <a href="#top" class="brand" aria-label="Opus AI — home">
+        <svg class="mark" viewBox="0 0 100 100" aria-hidden="true">
+          <circle cx="50" cy="50" r="38" fill="none" stroke="#C8A96E" stroke-width="2.2"/>
+          <path d="M31 62 C35 50 37 44 39 37 L50 52 L61 37 C63 44 65 50 69 62" fill="none" stroke="#C8A96E" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
+          <path d="M33 60 Q50 70 67 60" fill="none" stroke="#C8A96E" stroke-width="1.6" opacity=".8"/>
+          <circle cx="39" cy="37" r="3" fill="#C8A96E"/>
+          <circle cx="61" cy="37" r="3" fill="#C8A96E"/>
+          <circle cx="50" cy="52" r="3.8" fill="#C8A96E"/>
+          <circle cx="50" cy="65" r="2.6" fill="#C8A96E"/>
         </svg>
         <span>Opus <b>AI</b></span>
       </a>
-      <nav class="nav-links" aria-label="Navegação principal">
-        <a href="#sobre">Sobre</a>
-        <a href="#servicos">Serviços</a>
-        <a href="#cases">Cases</a>
-        <a href="#contato">Contato</a>
+
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#sobre" data-i18n="nav.about">About</a>
+        <a href="#servicos" data-i18n="nav.services">Services</a>
+        <a href="#cases" data-i18n="nav.cases">Cases</a>
+        <a href="#contato" data-i18n="nav.contact">Contact</a>
       </nav>
-      <a href="#contato" class="btn btn-gold nav-cta">Fale conosco</a>
-      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
+
+      <div class="nav-right">
+        <div class="lang">
+          <button class="lang-btn" id="langBtn" aria-haspopup="true" aria-expanded="false" aria-controls="langMenu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
+            <span id="langCurrent">EN</span>
+            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="lang-menu" id="langMenu" role="menu" aria-label="Language">
+            <button class="lang-opt" data-lang="en" role="menuitem">English <span class="code">EN</span></button>
+            <button class="lang-opt" data-lang="pt" role="menuitem">Português <span class="code">PT</span></button>
+            <button class="lang-opt" data-lang="es" role="menuitem">Español <span class="code">ES</span></button>
+            <button class="lang-opt" data-lang="de" role="menuitem">Deutsch <span class="code">DE</span></button>
+          </div>
+        </div>
+        <a href="#contato" class="btn btn-gold" data-i18n="nav.cta">Get in touch</a>
+      </div>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
       </button>
     </div>
+
     <div class="mobile-menu" id="mobileMenu">
-      <a href="#sobre">Sobre</a>
-      <a href="#servicos">Serviços</a>
-      <a href="#cases">Cases</a>
-      <a href="#contato">Contato</a>
-      <a href="#contato" class="btn btn-gold">Fale conosco</a>
+      <a href="#sobre" data-i18n="nav.about">About</a>
+      <a href="#servicos" data-i18n="nav.services">Services</a>
+      <a href="#cases" data-i18n="nav.cases">Cases</a>
+      <a href="#contato" data-i18n="nav.contact">Contact</a>
+      <div class="lang-row" role="group" aria-label="Language">
+        <button data-lang="en">EN</button>
+        <button data-lang="pt">PT</button>
+        <button data-lang="es">ES</button>
+        <button data-lang="de">DE</button>
+      </div>
+      <a href="#contato" class="btn btn-gold" data-i18n="nav.cta">Get in touch</a>
     </div>
   </header>
 
@@ -405,7 +358,7 @@
     <span id="top"></span>
 
     <!-- ============ HERO ============ -->
-    <section class="hero" aria-label="Apresentação">
+    <section class="hero" aria-label="Intro">
       <div class="staff" aria-hidden="true">
         <svg viewBox="0 0 1400 160" preserveAspectRatio="none">
           <line class="line" x1="0" y1="40"  x2="1400" y2="40"/>
@@ -419,92 +372,78 @@
       </div>
       <div class="wrap">
         <div class="hero-inner reveal">
-          <p class="eyebrow">Tecnologia com Alma Criativa</p>
-          <h1>Você não precisa entender de IA.<br><span class="accent">Precisa de tempo de volta.</span></h1>
-          <p class="hero-sub">A Opus AI cria sistemas de automação inteligente que eliminam gargalos, reduzem custos e devolvem horas ao seu dia — sem jargões, sem complicação.</p>
+          <p class="eyebrow" data-i18n="hero.eyebrow">Technology with a Creative Soul</p>
+          <h1 data-i18n-html="hero.title">You don't need to understand AI.<br><span class="accent">You need your time back.</span></h1>
+          <p class="hero-sub" data-i18n="hero.sub">Opus AI builds intelligent automation systems that remove bottlenecks, cut costs and give hours back to your day — no jargon, no complexity.</p>
           <div class="hero-actions">
-            <a href="#contato" class="btn btn-gold">Agende uma conversa
+            <a href="#contato" class="btn btn-gold" data-i18n="hero.cta1">Book a conversation
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
             </a>
-            <a href="#servicos" class="btn btn-ghost">Ver como funciona</a>
+            <a href="#servicos" class="btn btn-ghost" data-i18n="hero.cta2">See how it works</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ============ SOBRE / DIFERENCIAL ============ -->
+    <!-- ============ ABOUT ============ -->
     <section id="sobre" aria-labelledby="sobre-title">
       <div class="wrap">
         <div class="reveal">
-          <p class="eyebrow">Sobre</p>
-          <h2 class="section-title" id="sobre-title">Por que a Opus AI é diferente</h2>
+          <p class="eyebrow" data-i18n="about.eyebrow">About</p>
+          <h2 class="section-title" id="sobre-title" data-i18n="about.title">Why Opus AI is different</h2>
         </div>
         <div class="pillars">
           <article class="pillar reveal">
-            <div class="icon-badge" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2 L20 7 V17 L12 22 L4 17 V7 Z"/><circle cx="12" cy="12" r="3"/></svg>
-            </div>
-            <h3>Tecnologia com propósito</h3>
-            <p>Não instalamos ferramentas. Criamos sistemas que resolvem o seu problema específico.</p>
+            <div class="icon-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2 L20 7 V17 L12 22 L4 17 V7 Z"/><circle cx="12" cy="12" r="3"/></svg></div>
+            <h3 data-i18n="p1.title">Technology with purpose</h3>
+            <p data-i18n="p1.text">We don't install tools. We build systems that solve your specific problem.</p>
           </article>
           <article class="pillar reveal d1">
-            <div class="icon-badge" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 3v18h18"/><path d="M7 15l4-5 3 3 5-7"/></svg>
-            </div>
-            <h3>Resultado mensurável</h3>
-            <p>Cada projeto tem uma métrica de sucesso clara. Tempo economizado. Custo reduzido. Processo eliminado.</p>
+            <div class="icon-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 3v18h18"/><path d="M7 15l4-5 3 3 5-7"/></svg></div>
+            <h3 data-i18n="p2.title">Measurable results</h3>
+            <p data-i18n="p2.text">Every project has a clear success metric. Time saved. Costs reduced. Process eliminated.</p>
           </article>
           <article class="pillar reveal d2">
-            <div class="icon-badge" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M16 5.5a3 3 0 0 1 0 5.6M18.5 20c0-2.4-1.2-4.5-3-5.6"/></svg>
-            </div>
-            <h3>Parceiro, não fornecedor</h3>
-            <p>Falamos de negócios sem jargões. Você entende o que está sendo construído e por quê.</p>
+            <div class="icon-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M16 5.5a3 3 0 0 1 0 5.6M18.5 20c0-2.4-1.2-4.5-3-5.6"/></svg></div>
+            <h3 data-i18n="p3.title">A partner, not a vendor</h3>
+            <p data-i18n="p3.text">We talk business without jargon. You understand what's being built and why.</p>
           </article>
         </div>
-        <p class="founder reveal">A Opus AI foi fundada por <b>João Rocha</b> — maestro, compositor e especialista em automação com IA. Essa combinação incomum é nossa maior vantagem: entendemos profundamente o universo das instituições que atendemos, porque vivemos dentro dele.</p>
+        <p class="founder reveal" data-i18n-html="about.founder">Opus AI was founded by <b>João Rocha</b> — conductor, composer and AI automation specialist. This unusual combination is our greatest advantage: we deeply understand the world of the institutions we serve, because we live inside it.</p>
       </div>
     </section>
 
-    <!-- ============ SERVIÇOS ============ -->
+    <!-- ============ SERVICES ============ -->
     <section id="servicos" style="background:var(--surface-2);" aria-labelledby="servicos-title">
       <div class="wrap">
         <div class="reveal">
-          <p class="eyebrow">Serviços</p>
-          <h2 class="section-title" id="servicos-title">O que construímos para você</h2>
+          <p class="eyebrow" data-i18n="services.eyebrow">Services</p>
+          <h2 class="section-title" id="servicos-title" data-i18n="services.title">What we build for you</h2>
         </div>
         <div class="grid-2">
           <article class="service reveal" data-tilt>
-            <div class="icon-badge" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="6" height="6" rx="1.5"/><rect x="15" y="14" width="6" height="6" rx="1.5"/><path d="M9 7h6a3 3 0 0 1 3 3v4"/></svg>
-            </div>
-            <h3>Automação de Processos</h3>
-            <p>Mapeamos seus processos manuais e repetitivos e os substituímos por sistemas inteligentes. De onboarding de voluntários a inscrições de alunos — se acontece todo dia, pode ser automatizado.</p>
+            <div class="icon-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="6" height="6" rx="1.5"/><rect x="15" y="14" width="6" height="6" rx="1.5"/><path d="M9 7h6a3 3 0 0 1 3 3v4"/></svg></div>
+            <h3 data-i18n="s1.title">Process Automation</h3>
+            <p data-i18n="s1.text">We map your manual, repetitive processes and replace them with intelligent systems. From volunteer onboarding to student enrollment — if it happens every day, it can be automated.</p>
             <div class="stack-tags"><span class="tag">n8n</span><span class="tag">Make</span><span class="tag">Google Workspace</span><span class="tag">APIs</span></div>
           </article>
           <article class="service reveal d1" data-tilt>
-            <div class="icon-badge" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="5" cy="6" r="2.2"/><circle cx="5" cy="18" r="2.2"/><circle cx="19" cy="12" r="2.2"/><path d="M7 6h4a3 3 0 0 1 3 3v0M7 18h4a3 3 0 0 0 3-3v0M14 12h3"/></svg>
-            </div>
-            <h3>Integração de Ferramentas</h3>
-            <p>Seus sistemas não conversam entre si? Conectamos CRM, planilhas, e-mail, WhatsApp, plataformas de pagamento e qualquer ferramenta que você já usa — sem trocar o que funciona.</p>
+            <div class="icon-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="5" cy="6" r="2.2"/><circle cx="5" cy="18" r="2.2"/><circle cx="19" cy="12" r="2.2"/><path d="M7 6h4a3 3 0 0 1 3 3v0M7 18h4a3 3 0 0 0 3-3v0M14 12h3"/></svg></div>
+            <h3 data-i18n="s2.title">Tool Integration</h3>
+            <p data-i18n="s2.text">Your systems don't talk to each other? We connect CRM, spreadsheets, email, WhatsApp, payment platforms and any tool you already use — without replacing what works.</p>
             <div class="stack-tags"><span class="tag">Webhooks</span><span class="tag">REST APIs</span><span class="tag">ChatGPT</span><span class="tag">Airtable</span><span class="tag">Notion</span></div>
           </article>
           <article class="service reveal d1" data-tilt>
-            <div class="icon-badge" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="8" width="16" height="11" rx="3"/><path d="M12 8V4M9 13h.01M15 13h.01"/><path d="M2 12v3M22 12v3"/></svg>
-            </div>
-            <h3>AI Agents &amp; Chatbots</h3>
-            <p>Agentes de IA que respondem, qualificam, agendam e executam tarefas sem intervenção humana. Atendimento, triagem de leads, suporte interno — disponível 24h.</p>
+            <div class="icon-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="8" width="16" height="11" rx="3"/><path d="M12 8V4M9 13h.01M15 13h.01"/><path d="M2 12v3M22 12v3"/></svg></div>
+            <h3 data-i18n="s3.title">AI Agents &amp; Chatbots</h3>
+            <p data-i18n="s3.text">AI agents that respond, qualify, schedule and execute tasks without human intervention. Customer service, lead triage, internal support — available 24/7.</p>
             <div class="stack-tags"><span class="tag">n8n</span><span class="tag">OpenAI</span><span class="tag">Retell AI</span><span class="tag">Vapi</span></div>
           </article>
           <article class="service reveal d2" data-tilt>
-            <div class="icon-badge" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/><path d="M11 8v6M8 11h6"/></svg>
-            </div>
-            <h3>Consultoria Estratégica</h3>
-            <p>Diagnóstico de gargalos operacionais e financeiros, plano de implementação de IA e acompanhamento do processo. Para quem quer entender antes de investir.</p>
-            <div class="stack-tags"><span class="tag">Workshop</span><span class="tag">Mapeamento</span><span class="tag">Roadmap</span><span class="tag">KPIs</span></div>
+            <div class="icon-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/><path d="M11 8v6M8 11h6"/></svg></div>
+            <h3 data-i18n="s4.title">Strategic Consulting</h3>
+            <p data-i18n="s4.text">Diagnosis of operational and financial bottlenecks, an AI implementation plan and follow-up throughout the process. For those who want to understand before investing.</p>
+            <div class="stack-tags"><span class="tag">Workshop</span><span class="tag">Mapping</span><span class="tag">Roadmap</span><span class="tag">KPIs</span></div>
           </article>
         </div>
       </div>
@@ -514,70 +453,52 @@
     <section id="cases" aria-labelledby="cases-title">
       <div class="wrap">
         <div class="reveal">
-          <p class="eyebrow">Cases</p>
-          <h2 class="section-title" id="cases-title">Projetos que entregamos</h2>
+          <p class="eyebrow" data-i18n="cases.eyebrow">Cases</p>
+          <h2 class="section-title" id="cases-title" data-i18n="cases.title">Projects we've delivered</h2>
         </div>
         <div class="cases">
 
           <article class="case reveal">
             <div class="case-main">
-              <span class="case-cat">Automação de Onboarding</span>
+              <span class="case-cat" data-i18n="c1.cat">Onboarding Automation</span>
               <h3>Conectando Orquestras Brasileiras <span style="font-size:1rem;color:var(--muted);font-family:var(--font-mono);">(COB)</span></h3>
-              <div class="case-block">
-                <div class="label">Desafio</div>
-                <p>O processo de integração de voluntários levava até 10 dias — múltiplos e-mails, agendamentos manuais, atrasos constantes.</p>
-              </div>
-              <div class="case-block">
-                <div class="label">Solução</div>
-                <p>Sistema de automação end-to-end que captura o interesse do voluntário, qualifica o perfil, agenda reunião e entrega materiais de boas-vindas automaticamente.</p>
-              </div>
+              <div class="case-block"><div class="label" data-i18n="lbl.challenge">Challenge</div><p data-i18n="c1.challenge">The volunteer onboarding process took up to 10 days — multiple emails, manual scheduling, constant delays.</p></div>
+              <div class="case-block"><div class="label" data-i18n="lbl.solution">Solution</div><p data-i18n="c1.solution">An end-to-end automation system that captures the volunteer's interest, qualifies their profile, schedules a meeting and delivers welcome materials automatically.</p></div>
             </div>
             <div class="case-side">
-              <p class="result"><span>Resultado</span>Processo reduzido de 10 dias para <b>menos de 20 minutos</b></p>
+              <p class="result"><span class="result-label" data-i18n="lbl.result">Result</span><span data-i18n-html="c1.result">Process cut from 10 days to <b>under 20 minutes</b></span></p>
               <div class="case-stack"><span class="tag">n8n</span><span class="tag">Google Workspace</span><span class="tag">Email automation</span></div>
             </div>
           </article>
 
           <article class="case reveal">
             <div class="case-main">
-              <span class="case-cat">Automação de Inscrições</span>
-              <h3>Conservatório de Cubatão <span class="badge-status">em desenvolvimento</span></h3>
-              <div class="case-block">
-                <div class="label">Desafio</div>
-                <p>Processo de inscrição de alunos 100% presencial, com validação manual de comprovantes de pagamento, dados inconsistentes e alto volume de trabalho administrativo.</p>
-              </div>
-              <div class="case-block">
-                <div class="label">Solução</div>
-                <p>Sistema de inscrição online inteligente em 3 etapas: dados pessoais (com corte por idade/escolaridade automático) → escolha de curso e período → pagamento integrado com validação automática do comprovante via IA.</p>
-              </div>
+              <span class="case-cat" data-i18n="c2.cat">Enrollment Automation</span>
+              <h3>Conservatório de Cubatão <span class="badge-status" data-i18n="st.dev">in development</span></h3>
+              <div class="case-block"><div class="label" data-i18n="lbl.challenge">Challenge</div><p data-i18n="c2.challenge">A 100% in-person student enrollment process, with manual validation of payment receipts, inconsistent data and a high volume of administrative work.</p></div>
+              <div class="case-block"><div class="label" data-i18n="lbl.solution">Solution</div><p data-i18n="c2.solution">An intelligent online enrollment system in 3 steps: personal data (with automatic age/education filtering) → course and schedule selection → integrated payment with automatic AI-based receipt validation.</p></div>
             </div>
             <div class="case-side">
-              <p class="result"><span>Resultado</span>Fim da verificação manual de comprovantes <b>· Inscrição 24/7</b></p>
-              <div class="case-stack"><span class="tag">n8n</span><span class="tag">Google Forms</span><span class="tag">Stripe / PIX API</span><span class="tag">OCR com IA</span></div>
+              <p class="result"><span class="result-label" data-i18n="lbl.result">Result</span><span data-i18n-html="c2.result">End of manual receipt checking <b>· Enroll 24/7</b></span></p>
+              <div class="case-stack"><span class="tag">n8n</span><span class="tag">Google Forms</span><span class="tag">Stripe / PIX API</span><span class="tag">AI OCR</span></div>
             </div>
           </article>
 
           <article class="case reveal">
             <div class="case-main">
-              <span class="case-cat">Automação de Agendamento Técnico</span>
-              <h3>Steinway &amp; Sons <span class="badge-status">em prospecção</span></h3>
-              <div class="case-block">
-                <div class="label">Desafio</div>
-                <p>Equipe de técnicos de piano sem sistema de gestão de visitas, gerando conflitos de agenda e deslocamentos desnecessários.</p>
-              </div>
-              <div class="case-block">
-                <div class="label">Solução proposta</div>
-                <p>Sistema de agendamento inteligente com notificações automáticas, roteamento por localização e histórico do cliente.</p>
-              </div>
+              <span class="case-cat" data-i18n="c3.cat">Technical Scheduling Automation</span>
+              <h3>Steinway &amp; Sons <span class="badge-status" data-i18n="st.prospect">in prospecting</span></h3>
+              <div class="case-block"><div class="label" data-i18n="lbl.challenge">Challenge</div><p data-i18n="c3.challenge">A team of piano technicians with no visit management system, causing scheduling conflicts and unnecessary travel.</p></div>
+              <div class="case-block"><div class="label" data-i18n="lbl.solutionProposed">Proposed solution</div><p data-i18n="c3.solution">An intelligent scheduling system with automatic notifications, location-based routing and customer history.</p></div>
             </div>
             <div class="case-side">
-              <p class="result"><span>Escopo proposto</span>Agenda sem conflitos <b>· Rotas otimizadas</b></p>
+              <p class="result"><span class="result-label" data-i18n="lbl.scopeProposed">Proposed scope</span><span data-i18n-html="c3.result">Conflict-free schedule <b>· Optimized routes</b></span></p>
               <div class="case-stack"><span class="tag">n8n</span><span class="tag">Google Calendar</span><span class="tag">WhatsApp Business API</span></div>
             </div>
           </article>
 
         </div>
-        <p class="cases-note">Mais cases em breve — empresa em fase de crescimento de portfólio.</p>
+        <p class="cases-note" data-i18n="cases.note">More cases coming soon — a company growing its portfolio.</p>
       </div>
     </section>
 
@@ -585,55 +506,55 @@
     <section id="stack" style="background:var(--surface-2);" aria-labelledby="stack-title">
       <div class="wrap">
         <div class="reveal">
-          <p class="eyebrow">Stack</p>
-          <h2 class="section-title" id="stack-title">Ferramentas que dominamos</h2>
+          <p class="eyebrow" data-i18n="stack.eyebrow">Stack</p>
+          <h2 class="section-title" id="stack-title" data-i18n="stack.title">Tools we master</h2>
         </div>
         <div class="stack-grid" id="stackGrid"></div>
       </div>
     </section>
 
-    <!-- ============ CONTATO ============ -->
+    <!-- ============ CONTACT ============ -->
     <section id="contato" class="contact" aria-labelledby="contato-title">
       <div class="wrap">
         <div class="contact-inner">
           <div class="reveal">
-            <p class="eyebrow">Contato</p>
-            <h2 id="contato-title">Pronto para recuperar seu tempo?</h2>
-            <p class="contact-lead">Agende uma conversa de 20 minutos. Sem compromisso. Sem pitch de vendas. Só um diagnóstico honesto do que podemos fazer por você.</p>
+            <p class="eyebrow" data-i18n="contact.eyebrow">Contact</p>
+            <h2 id="contato-title" data-i18n="contact.title">Ready to reclaim your time?</h2>
+            <p class="contact-lead" data-i18n="contact.lead">Book a 20-minute conversation. No commitment. No sales pitch. Just an honest diagnosis of what we can do for you.</p>
             <div class="contact-links">
               <a href="mailto:contato@opusai.com.br">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
                 contato@opusai.com.br
               </a>
-              <a href="https://www.linkedin.com/showcase/134414056/" target="_blank" rel="noopener" aria-label="Opus AI no LinkedIn">
+              <a href="https://www.linkedin.com/showcase/134414056/" target="_blank" rel="noopener" aria-label="Opus AI on LinkedIn">
                 <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 1 1 0 3.5a2.5 2.5 0 0 1 4.98 0zM.25 8h4.5v12.5H.25V8zm7 0h4.31v1.71h.06c.6-1.13 2.06-2.32 4.24-2.32 4.54 0 5.38 2.99 5.38 6.87v7.74h-4.5v-6.86c0-1.64-.03-3.74-2.28-3.74-2.28 0-2.63 1.78-2.63 3.62v6.98h-4.5V8z"/></svg>
-                Opus AI no LinkedIn
+                <span data-i18n="contact.linkedin">Opus AI on LinkedIn</span>
               </a>
             </div>
           </div>
 
           <form class="reveal d1" id="contactForm" action="https://formspree.io/f/PLACEHOLDER" method="POST" novalidate>
             <div class="field">
-              <label for="nome">Nome</label>
-              <input type="text" id="nome" name="nome" autocomplete="name" required placeholder="Seu nome">
+              <label for="nome" data-i18n="form.name">Name</label>
+              <input type="text" id="nome" name="nome" autocomplete="name" required data-i18n-ph="ph.name" placeholder="Your name">
             </div>
             <div class="field">
-              <label for="email">E-mail</label>
-              <input type="email" id="email" name="email" autocomplete="email" required placeholder="voce@instituicao.com.br">
+              <label for="email" data-i18n="form.email">Email</label>
+              <input type="email" id="email" name="email" autocomplete="email" required data-i18n-ph="ph.email" placeholder="you@institution.com">
             </div>
             <div class="field">
-              <label for="empresa">Empresa / Instituição</label>
-              <input type="text" id="empresa" name="empresa" autocomplete="organization" placeholder="Nome da organização">
+              <label for="empresa" data-i18n="form.company">Company / Institution</label>
+              <input type="text" id="empresa" name="empresa" autocomplete="organization" data-i18n-ph="ph.company" placeholder="Organization name">
             </div>
             <div class="field">
-              <label for="mensagem">Mensagem <span style="opacity:.6">(opcional)</span></label>
-              <textarea id="mensagem" name="mensagem" placeholder="Conte rapidamente o que você gostaria de automatizar"></textarea>
+              <label for="mensagem"><span data-i18n="form.message">Message</span> <span style="opacity:.6" data-i18n="form.optional">(optional)</span></label>
+              <textarea id="mensagem" name="mensagem" data-i18n-ph="ph.message" placeholder="Tell us briefly what you'd like to automate"></textarea>
             </div>
-            <button type="submit" class="btn btn-gold">Enviar mensagem
+            <button type="submit" class="btn btn-gold" data-i18n="form.submit">Send message
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
             </button>
             <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
-            <p class="form-note">Ao enviar, você concorda em ser contatado pela equipe da Opus AI.</p>
+            <p class="form-note" data-i18n="form.note">By submitting, you agree to be contacted by the Opus AI team.</p>
           </form>
         </div>
       </div>
@@ -645,39 +566,244 @@
     <div class="wrap footer-inner">
       <div class="footer-brand">
         <span class="brand">Opus <b style="color:var(--gold)">AI</b></span>
-        <span class="footer-tag">Tecnologia com Alma Criativa</span>
+        <span class="footer-tag" data-i18n="footer.tag">Technology with a Creative Soul</span>
       </div>
-      <nav class="footer-links" aria-label="Rodapé">
-        <a href="#sobre">Sobre</a>
-        <a href="#servicos">Serviços</a>
-        <a href="#cases">Cases</a>
-        <a href="#contato">Contato</a>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="#sobre" data-i18n="nav.about">About</a>
+        <a href="#servicos" data-i18n="nav.services">Services</a>
+        <a href="#cases" data-i18n="nav.cases">Cases</a>
+        <a href="#contato" data-i18n="nav.contact">Contact</a>
       </nav>
     </div>
-    <div class="wrap"><p class="copy">© 2025 Opus AI. Todos os direitos reservados.</p></div>
+    <div class="wrap"><p class="copy" data-i18n="footer.copy">© 2025 Opus AI. All rights reserved.</p></div>
   </footer>
 
   <script>
-    /* ===== Sticky header opacity on scroll ===== */
-    const header = document.getElementById('header');
-    const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 24);
+    /* =================== i18n =================== */
+    const I18N = {
+      en: {
+        "doc.title": "Opus AI — Intelligent Automation for Cultural Institutions",
+        "doc.desc": "Opus AI builds AI automation systems that remove manual processes, cut costs and give time back to teams. Specialists in cultural institutions and the nonprofit sector.",
+        "skip": "Skip to content",
+        "nav.about": "About", "nav.services": "Services", "nav.cases": "Cases", "nav.contact": "Contact", "nav.cta": "Get in touch",
+        "hero.eyebrow": "Technology with a Creative Soul",
+        "hero.title": "You don't need to understand AI.<br><span class=\"accent\">You need your time back.</span>",
+        "hero.sub": "Opus AI builds intelligent automation systems that remove bottlenecks, cut costs and give hours back to your day — no jargon, no complexity.",
+        "hero.cta1": "Book a conversation", "hero.cta2": "See how it works",
+        "about.eyebrow": "About", "about.title": "Why Opus AI is different",
+        "p1.title": "Technology with purpose", "p1.text": "We don't install tools. We build systems that solve your specific problem.",
+        "p2.title": "Measurable results", "p2.text": "Every project has a clear success metric. Time saved. Costs reduced. Process eliminated.",
+        "p3.title": "A partner, not a vendor", "p3.text": "We talk business without jargon. You understand what's being built and why.",
+        "about.founder": "Opus AI was founded by <b>João Rocha</b> — conductor, composer and AI automation specialist. This unusual combination is our greatest advantage: we deeply understand the world of the institutions we serve, because we live inside it.",
+        "services.eyebrow": "Services", "services.title": "What we build for you",
+        "s1.title": "Process Automation", "s1.text": "We map your manual, repetitive processes and replace them with intelligent systems. From volunteer onboarding to student enrollment — if it happens every day, it can be automated.",
+        "s2.title": "Tool Integration", "s2.text": "Your systems don't talk to each other? We connect CRM, spreadsheets, email, WhatsApp, payment platforms and any tool you already use — without replacing what works.",
+        "s3.title": "AI Agents & Chatbots", "s3.text": "AI agents that respond, qualify, schedule and execute tasks without human intervention. Customer service, lead triage, internal support — available 24/7.",
+        "s4.title": "Strategic Consulting", "s4.text": "Diagnosis of operational and financial bottlenecks, an AI implementation plan and follow-up throughout the process. For those who want to understand before investing.",
+        "cases.eyebrow": "Cases", "cases.title": "Projects we've delivered",
+        "lbl.challenge": "Challenge", "lbl.solution": "Solution", "lbl.solutionProposed": "Proposed solution", "lbl.result": "Result", "lbl.scopeProposed": "Proposed scope",
+        "st.dev": "in development", "st.prospect": "in prospecting",
+        "c1.cat": "Onboarding Automation", "c1.challenge": "The volunteer onboarding process took up to 10 days — multiple emails, manual scheduling, constant delays.", "c1.solution": "An end-to-end automation system that captures the volunteer's interest, qualifies their profile, schedules a meeting and delivers welcome materials automatically.", "c1.result": "Process cut from 10 days to <b>under 20 minutes</b>",
+        "c2.cat": "Enrollment Automation", "c2.challenge": "A 100% in-person student enrollment process, with manual validation of payment receipts, inconsistent data and a high volume of administrative work.", "c2.solution": "An intelligent online enrollment system in 3 steps: personal data (with automatic age/education filtering) → course and schedule selection → integrated payment with automatic AI-based receipt validation.", "c2.result": "End of manual receipt checking <b>· Enroll 24/7</b>",
+        "c3.cat": "Technical Scheduling Automation", "c3.challenge": "A team of piano technicians with no visit management system, causing scheduling conflicts and unnecessary travel.", "c3.solution": "An intelligent scheduling system with automatic notifications, location-based routing and customer history.", "c3.result": "Conflict-free schedule <b>· Optimized routes</b>",
+        "cases.note": "More cases coming soon — a company growing its portfolio.",
+        "stack.eyebrow": "Stack", "stack.title": "Tools we master",
+        "contact.eyebrow": "Contact", "contact.title": "Ready to reclaim your time?", "contact.lead": "Book a 20-minute conversation. No commitment. No sales pitch. Just an honest diagnosis of what we can do for you.", "contact.linkedin": "Opus AI on LinkedIn",
+        "form.name": "Name", "form.email": "Email", "form.company": "Company / Institution", "form.message": "Message", "form.optional": "(optional)", "form.submit": "Send message", "form.note": "By submitting, you agree to be contacted by the Opus AI team.",
+        "ph.name": "Your name", "ph.email": "you@institution.com", "ph.company": "Organization name", "ph.message": "Tell us briefly what you'd like to automate",
+        "footer.tag": "Technology with a Creative Soul", "footer.copy": "© 2025 Opus AI. All rights reserved.",
+        "aria.openMenu": "Open menu", "aria.closeMenu": "Close menu",
+        "status.invalid": "Please fill in a valid name and email.", "status.mailto": "Opening your email client…", "status.ok": "Message sent. We'll get back to you soon. Thank you!", "status.err": "Couldn't send right now. Please write to contato@opusai.com.br."
+      },
+      pt: {
+        "doc.title": "Opus AI — Automação Inteligente para Instituições Culturais",
+        "doc.desc": "A Opus AI cria sistemas de automação com IA que eliminam processos manuais, reduzem custos e devolvem tempo às equipes. Especialistas em instituições culturais e terceiro setor.",
+        "skip": "Pular para o conteúdo",
+        "nav.about": "Sobre", "nav.services": "Serviços", "nav.cases": "Cases", "nav.contact": "Contato", "nav.cta": "Fale conosco",
+        "hero.eyebrow": "Tecnologia com Alma Criativa",
+        "hero.title": "Você não precisa entender de IA.<br><span class=\"accent\">Precisa de tempo de volta.</span>",
+        "hero.sub": "A Opus AI cria sistemas de automação inteligente que eliminam gargalos, reduzem custos e devolvem horas ao seu dia — sem jargões, sem complicação.",
+        "hero.cta1": "Agende uma conversa", "hero.cta2": "Ver como funciona",
+        "about.eyebrow": "Sobre", "about.title": "Por que a Opus AI é diferente",
+        "p1.title": "Tecnologia com propósito", "p1.text": "Não instalamos ferramentas. Criamos sistemas que resolvem o seu problema específico.",
+        "p2.title": "Resultado mensurável", "p2.text": "Cada projeto tem uma métrica de sucesso clara. Tempo economizado. Custo reduzido. Processo eliminado.",
+        "p3.title": "Parceiro, não fornecedor", "p3.text": "Falamos de negócios sem jargões. Você entende o que está sendo construído e por quê.",
+        "about.founder": "A Opus AI foi fundada por <b>João Rocha</b> — maestro, compositor e especialista em automação com IA. Essa combinação incomum é nossa maior vantagem: entendemos profundamente o universo das instituições que atendemos, porque vivemos dentro dele.",
+        "services.eyebrow": "Serviços", "services.title": "O que construímos para você",
+        "s1.title": "Automação de Processos", "s1.text": "Mapeamos seus processos manuais e repetitivos e os substituímos por sistemas inteligentes. De onboarding de voluntários a inscrições de alunos — se acontece todo dia, pode ser automatizado.",
+        "s2.title": "Integração de Ferramentas", "s2.text": "Seus sistemas não conversam entre si? Conectamos CRM, planilhas, e-mail, WhatsApp, plataformas de pagamento e qualquer ferramenta que você já usa — sem trocar o que funciona.",
+        "s3.title": "AI Agents & Chatbots", "s3.text": "Agentes de IA que respondem, qualificam, agendam e executam tarefas sem intervenção humana. Atendimento, triagem de leads, suporte interno — disponível 24h.",
+        "s4.title": "Consultoria Estratégica", "s4.text": "Diagnóstico de gargalos operacionais e financeiros, plano de implementação de IA e acompanhamento do processo. Para quem quer entender antes de investir.",
+        "cases.eyebrow": "Cases", "cases.title": "Projetos que entregamos",
+        "lbl.challenge": "Desafio", "lbl.solution": "Solução", "lbl.solutionProposed": "Solução proposta", "lbl.result": "Resultado", "lbl.scopeProposed": "Escopo proposto",
+        "st.dev": "em desenvolvimento", "st.prospect": "em prospecção",
+        "c1.cat": "Automação de Onboarding", "c1.challenge": "O processo de integração de voluntários levava até 10 dias — múltiplos e-mails, agendamentos manuais, atrasos constantes.", "c1.solution": "Sistema de automação end-to-end que captura o interesse do voluntário, qualifica o perfil, agenda reunião e entrega materiais de boas-vindas automaticamente.", "c1.result": "Processo reduzido de 10 dias para <b>menos de 20 minutos</b>",
+        "c2.cat": "Automação de Inscrições", "c2.challenge": "Processo de inscrição de alunos 100% presencial, com validação manual de comprovantes de pagamento, dados inconsistentes e alto volume de trabalho administrativo.", "c2.solution": "Sistema de inscrição online inteligente em 3 etapas: dados pessoais (com corte por idade/escolaridade automático) → escolha de curso e período → pagamento integrado com validação automática do comprovante via IA.", "c2.result": "Fim da verificação manual de comprovantes <b>· Inscrição 24/7</b>",
+        "c3.cat": "Automação de Agendamento Técnico", "c3.challenge": "Equipe de técnicos de piano sem sistema de gestão de visitas, gerando conflitos de agenda e deslocamentos desnecessários.", "c3.solution": "Sistema de agendamento inteligente com notificações automáticas, roteamento por localização e histórico do cliente.", "c3.result": "Agenda sem conflitos <b>· Rotas otimizadas</b>",
+        "cases.note": "Mais cases em breve — empresa em fase de crescimento de portfólio.",
+        "stack.eyebrow": "Stack", "stack.title": "Ferramentas que dominamos",
+        "contact.eyebrow": "Contato", "contact.title": "Pronto para recuperar seu tempo?", "contact.lead": "Agende uma conversa de 20 minutos. Sem compromisso. Sem pitch de vendas. Só um diagnóstico honesto do que podemos fazer por você.", "contact.linkedin": "Opus AI no LinkedIn",
+        "form.name": "Nome", "form.email": "E-mail", "form.company": "Empresa / Instituição", "form.message": "Mensagem", "form.optional": "(opcional)", "form.submit": "Enviar mensagem", "form.note": "Ao enviar, você concorda em ser contatado pela equipe da Opus AI.",
+        "ph.name": "Seu nome", "ph.email": "voce@instituicao.com.br", "ph.company": "Nome da organização", "ph.message": "Conte rapidamente o que você gostaria de automatizar",
+        "footer.tag": "Tecnologia com Alma Criativa", "footer.copy": "© 2025 Opus AI. Todos os direitos reservados.",
+        "aria.openMenu": "Abrir menu", "aria.closeMenu": "Fechar menu",
+        "status.invalid": "Por favor, preencha nome e e-mail válidos.", "status.mailto": "Abrindo seu cliente de e-mail…", "status.ok": "Mensagem enviada. Retornaremos em breve. Obrigado!", "status.err": "Não foi possível enviar agora. Escreva para contato@opusai.com.br."
+      },
+      es: {
+        "doc.title": "Opus AI — Automatización Inteligente para Instituciones Culturales",
+        "doc.desc": "Opus AI crea sistemas de automatización con IA que eliminan procesos manuales, reducen costos y devuelven tiempo a los equipos. Especialistas en instituciones culturales y el tercer sector.",
+        "skip": "Saltar al contenido",
+        "nav.about": "Nosotros", "nav.services": "Servicios", "nav.cases": "Casos", "nav.contact": "Contacto", "nav.cta": "Hablemos",
+        "hero.eyebrow": "Tecnología con Alma Creativa",
+        "hero.title": "No necesitas entender de IA.<br><span class=\"accent\">Necesitas recuperar tu tiempo.</span>",
+        "hero.sub": "Opus AI crea sistemas de automatización inteligente que eliminan cuellos de botella, reducen costos y devuelven horas a tu día — sin jergas, sin complicaciones.",
+        "hero.cta1": "Agenda una conversación", "hero.cta2": "Ver cómo funciona",
+        "about.eyebrow": "Nosotros", "about.title": "Por qué Opus AI es diferente",
+        "p1.title": "Tecnología con propósito", "p1.text": "No instalamos herramientas. Creamos sistemas que resuelven tu problema específico.",
+        "p2.title": "Resultados medibles", "p2.text": "Cada proyecto tiene una métrica de éxito clara. Tiempo ahorrado. Costos reducidos. Proceso eliminado.",
+        "p3.title": "Un socio, no un proveedor", "p3.text": "Hablamos de negocios sin jergas. Entiendes qué se está construyendo y por qué.",
+        "about.founder": "Opus AI fue fundada por <b>João Rocha</b> — director de orquesta, compositor y especialista en automatización con IA. Esta combinación poco común es nuestra mayor ventaja: entendemos profundamente el universo de las instituciones que atendemos, porque vivimos dentro de él.",
+        "services.eyebrow": "Servicios", "services.title": "Lo que construimos para ti",
+        "s1.title": "Automatización de Procesos", "s1.text": "Mapeamos tus procesos manuales y repetitivos y los reemplazamos por sistemas inteligentes. Desde la incorporación de voluntarios hasta la inscripción de alumnos — si ocurre cada día, se puede automatizar.",
+        "s2.title": "Integración de Herramientas", "s2.text": "¿Tus sistemas no se comunican entre sí? Conectamos CRM, hojas de cálculo, correo, WhatsApp, plataformas de pago y cualquier herramienta que ya usas — sin cambiar lo que funciona.",
+        "s3.title": "Agentes de IA y Chatbots", "s3.text": "Agentes de IA que responden, califican, agendan y ejecutan tareas sin intervención humana. Atención, calificación de leads, soporte interno — disponible 24/7.",
+        "s4.title": "Consultoría Estratégica", "s4.text": "Diagnóstico de cuellos de botella operativos y financieros, plan de implementación de IA y acompañamiento del proceso. Para quienes quieren entender antes de invertir.",
+        "cases.eyebrow": "Casos", "cases.title": "Proyectos que entregamos",
+        "lbl.challenge": "Desafío", "lbl.solution": "Solución", "lbl.solutionProposed": "Solución propuesta", "lbl.result": "Resultado", "lbl.scopeProposed": "Alcance propuesto",
+        "st.dev": "en desarrollo", "st.prospect": "en prospección",
+        "c1.cat": "Automatización de Onboarding", "c1.challenge": "El proceso de integración de voluntarios tardaba hasta 10 días — múltiples correos, agendamientos manuales, retrasos constantes.", "c1.solution": "Sistema de automatización de extremo a extremo que capta el interés del voluntario, califica el perfil, agenda la reunión y entrega materiales de bienvenida automáticamente.", "c1.result": "Proceso reducido de 10 días a <b>menos de 20 minutos</b>",
+        "c2.cat": "Automatización de Inscripciones", "c2.challenge": "Proceso de inscripción de alumnos 100% presencial, con validación manual de comprobantes de pago, datos inconsistentes y alto volumen de trabajo administrativo.", "c2.solution": "Sistema de inscripción en línea inteligente en 3 etapas: datos personales (con filtro automático por edad/escolaridad) → elección de curso y horario → pago integrado con validación automática del comprobante mediante IA.", "c2.result": "Fin de la verificación manual de comprobantes <b>· Inscripción 24/7</b>",
+        "c3.cat": "Automatización de Agendamiento Técnico", "c3.challenge": "Equipo de técnicos de piano sin sistema de gestión de visitas, generando conflictos de agenda y desplazamientos innecesarios.", "c3.solution": "Sistema de agendamiento inteligente con notificaciones automáticas, enrutamiento por ubicación e historial del cliente.", "c3.result": "Agenda sin conflictos <b>· Rutas optimizadas</b>",
+        "cases.note": "Más casos próximamente — empresa en fase de crecimiento de portafolio.",
+        "stack.eyebrow": "Stack", "stack.title": "Herramientas que dominamos",
+        "contact.eyebrow": "Contacto", "contact.title": "¿Listo para recuperar tu tiempo?", "contact.lead": "Agenda una conversación de 20 minutos. Sin compromiso. Sin discurso de ventas. Solo un diagnóstico honesto de lo que podemos hacer por ti.", "contact.linkedin": "Opus AI en LinkedIn",
+        "form.name": "Nombre", "form.email": "Correo", "form.company": "Empresa / Institución", "form.message": "Mensaje", "form.optional": "(opcional)", "form.submit": "Enviar mensaje", "form.note": "Al enviar, aceptas ser contactado por el equipo de Opus AI.",
+        "ph.name": "Tu nombre", "ph.email": "tu@institucion.com", "ph.company": "Nombre de la organización", "ph.message": "Cuéntanos brevemente qué te gustaría automatizar",
+        "footer.tag": "Tecnología con Alma Creativa", "footer.copy": "© 2025 Opus AI. Todos los derechos reservados.",
+        "aria.openMenu": "Abrir menú", "aria.closeMenu": "Cerrar menú",
+        "status.invalid": "Por favor, completa un nombre y un correo válidos.", "status.mailto": "Abriendo tu cliente de correo…", "status.ok": "Mensaje enviado. Te responderemos pronto. ¡Gracias!", "status.err": "No se pudo enviar ahora. Escribe a contato@opusai.com.br."
+      },
+      de: {
+        "doc.title": "Opus AI — Intelligente Automatisierung für Kulturinstitutionen",
+        "doc.desc": "Opus AI entwickelt KI-Automatisierungssysteme, die manuelle Prozesse beseitigen, Kosten senken und Teams Zeit zurückgeben. Spezialisten für Kulturinstitutionen und den gemeinnützigen Sektor.",
+        "skip": "Zum Inhalt springen",
+        "nav.about": "Über uns", "nav.services": "Leistungen", "nav.cases": "Referenzen", "nav.contact": "Kontakt", "nav.cta": "Kontakt aufnehmen",
+        "hero.eyebrow": "Technologie mit kreativer Seele",
+        "hero.title": "Sie müssen KI nicht verstehen.<br><span class=\"accent\">Sie brauchen Ihre Zeit zurück.</span>",
+        "hero.sub": "Opus AI entwickelt intelligente Automatisierungssysteme, die Engpässe beseitigen, Kosten senken und Ihnen Stunden Ihres Tages zurückgeben — ohne Fachjargon, ohne Komplexität.",
+        "hero.cta1": "Gespräch vereinbaren", "hero.cta2": "So funktioniert's",
+        "about.eyebrow": "Über uns", "about.title": "Warum Opus AI anders ist",
+        "p1.title": "Technologie mit Sinn", "p1.text": "Wir installieren keine Tools. Wir bauen Systeme, die Ihr konkretes Problem lösen.",
+        "p2.title": "Messbare Ergebnisse", "p2.text": "Jedes Projekt hat eine klare Erfolgskennzahl. Gesparte Zeit. Gesenkte Kosten. Eliminierter Prozess.",
+        "p3.title": "Partner, kein Lieferant", "p3.text": "Wir sprechen über Geschäft ohne Fachjargon. Sie verstehen, was gebaut wird und warum.",
+        "about.founder": "Opus AI wurde von <b>João Rocha</b> gegründet — Dirigent, Komponist und Spezialist für KI-Automatisierung. Diese ungewöhnliche Kombination ist unser größter Vorteil: Wir verstehen die Welt der Institutionen, die wir betreuen, zutiefst, weil wir selbst darin leben.",
+        "services.eyebrow": "Leistungen", "services.title": "Was wir für Sie bauen",
+        "s1.title": "Prozessautomatisierung", "s1.text": "Wir erfassen Ihre manuellen, sich wiederholenden Prozesse und ersetzen sie durch intelligente Systeme. Vom Onboarding von Freiwilligen bis zur Anmeldung von Schülern — was täglich passiert, lässt sich automatisieren.",
+        "s2.title": "Tool-Integration", "s2.text": "Ihre Systeme kommunizieren nicht miteinander? Wir verbinden CRM, Tabellen, E-Mail, WhatsApp, Zahlungsplattformen und jedes Tool, das Sie bereits nutzen — ohne zu ersetzen, was funktioniert.",
+        "s3.title": "KI-Agenten & Chatbots", "s3.text": "KI-Agenten, die antworten, qualifizieren, terminieren und Aufgaben ohne menschliches Eingreifen ausführen. Kundenservice, Lead-Qualifizierung, interner Support — rund um die Uhr verfügbar.",
+        "s4.title": "Strategische Beratung", "s4.text": "Diagnose operativer und finanzieller Engpässe, ein KI-Implementierungsplan und Begleitung über den gesamten Prozess. Für alle, die verstehen wollen, bevor sie investieren.",
+        "cases.eyebrow": "Referenzen", "cases.title": "Projekte, die wir umgesetzt haben",
+        "lbl.challenge": "Herausforderung", "lbl.solution": "Lösung", "lbl.solutionProposed": "Vorgeschlagene Lösung", "lbl.result": "Ergebnis", "lbl.scopeProposed": "Vorgeschlagener Umfang",
+        "st.dev": "in Entwicklung", "st.prospect": "in Akquise",
+        "c1.cat": "Onboarding-Automatisierung", "c1.challenge": "Das Onboarding von Freiwilligen dauerte bis zu 10 Tage — zahlreiche E-Mails, manuelle Terminplanung, ständige Verzögerungen.", "c1.solution": "Ein durchgängiges Automatisierungssystem, das das Interesse des Freiwilligen erfasst, das Profil qualifiziert, ein Treffen plant und Willkommensmaterialien automatisch bereitstellt.", "c1.result": "Prozess von 10 Tagen auf <b>unter 20 Minuten</b> verkürzt",
+        "c2.cat": "Anmelde-Automatisierung", "c2.challenge": "Ein zu 100 % persönlicher Anmeldeprozess für Schüler, mit manueller Prüfung von Zahlungsbelegen, inkonsistenten Daten und hohem Verwaltungsaufwand.", "c2.solution": "Ein intelligentes Online-Anmeldesystem in 3 Schritten: persönliche Daten (mit automatischem Filter nach Alter/Bildung) → Kurs- und Terminwahl → integrierte Zahlung mit automatischer KI-Belegprüfung.", "c2.result": "Schluss mit manueller Belegprüfung <b>· Anmeldung rund um die Uhr</b>",
+        "c3.cat": "Terminplanungs-Automatisierung", "c3.challenge": "Ein Team von Klaviertechnikern ohne Besuchsmanagementsystem, was zu Terminkonflikten und unnötigen Fahrten führt.", "c3.solution": "Ein intelligentes Terminplanungssystem mit automatischen Benachrichtigungen, standortbasierter Routenplanung und Kundenhistorie.", "c3.result": "Konfliktfreier Terminplan <b>· Optimierte Routen</b>",
+        "cases.note": "Weitere Referenzen folgen in Kürze — ein Unternehmen, das sein Portfolio ausbaut.",
+        "stack.eyebrow": "Stack", "stack.title": "Werkzeuge, die wir beherrschen",
+        "contact.eyebrow": "Kontakt", "contact.title": "Bereit, Ihre Zeit zurückzugewinnen?", "contact.lead": "Vereinbaren Sie ein 20-minütiges Gespräch. Unverbindlich. Kein Verkaufsgespräch. Nur eine ehrliche Einschätzung, was wir für Sie tun können.", "contact.linkedin": "Opus AI auf LinkedIn",
+        "form.name": "Name", "form.email": "E-Mail", "form.company": "Unternehmen / Institution", "form.message": "Nachricht", "form.optional": "(optional)", "form.submit": "Nachricht senden", "form.note": "Mit dem Absenden erklären Sie sich damit einverstanden, vom Opus-AI-Team kontaktiert zu werden.",
+        "ph.name": "Ihr Name", "ph.email": "sie@institution.de", "ph.company": "Name der Organisation", "ph.message": "Erzählen Sie kurz, was Sie automatisieren möchten",
+        "footer.tag": "Technologie mit kreativer Seele", "footer.copy": "© 2025 Opus AI. Alle Rechte vorbehalten.",
+        "aria.openMenu": "Menü öffnen", "aria.closeMenu": "Menü schließen",
+        "status.invalid": "Bitte geben Sie einen gültigen Namen und eine gültige E-Mail an.", "status.mailto": "Ihr E-Mail-Programm wird geöffnet…", "status.ok": "Nachricht gesendet. Wir melden uns bald. Vielen Dank!", "status.err": "Senden derzeit nicht möglich. Bitte schreiben Sie an contato@opusai.com.br."
+      }
+    };
+    const LANG_LABEL = { en: "EN", pt: "PT", es: "ES", de: "DE" };
+    const SUPPORTED = ["en", "pt", "es", "de"];
+    let currentLang = "en";
+
+    function setMeta(sel, attr, val) {
+      const el = document.querySelector(sel);
+      if (el) el.setAttribute(attr, val);
+    }
+
+    function applyLang(lang) {
+      if (!SUPPORTED.includes(lang)) lang = "en";
+      const dict = I18N[lang];
+      currentLang = lang;
+      document.documentElement.lang = lang;
+
+      document.querySelectorAll("[data-i18n]").forEach(el => {
+        const k = el.getAttribute("data-i18n");
+        if (dict[k] != null) el.textContent = dict[k];
+      });
+      document.querySelectorAll("[data-i18n-html]").forEach(el => {
+        const k = el.getAttribute("data-i18n-html");
+        if (dict[k] != null) el.innerHTML = dict[k];
+      });
+      document.querySelectorAll("[data-i18n-ph]").forEach(el => {
+        const k = el.getAttribute("data-i18n-ph");
+        if (dict[k] != null) el.setAttribute("placeholder", dict[k]);
+      });
+
+      // document head
+      document.title = dict["doc.title"];
+      setMeta('meta[name="description"]', "content", dict["doc.desc"]);
+      setMeta('meta[property="og:title"]', "content", dict["doc.title"]);
+      setMeta('meta[property="og:description"]', "content", dict["doc.desc"]);
+
+      // switcher state
+      document.getElementById("langCurrent").textContent = LANG_LABEL[lang];
+      document.querySelectorAll("[data-lang]").forEach(b => b.setAttribute("aria-current", b.getAttribute("data-lang") === lang ? "true" : "false"));
+
+      // dynamic aria labels
+      const open = mobileMenu.classList.contains("open");
+      menuToggle.setAttribute("aria-label", open ? dict["aria.closeMenu"] : dict["aria.openMenu"]);
+
+      try { localStorage.setItem("opusai_lang", lang); } catch (e) {}
+    }
+
+    /* ===== Header scroll opacity ===== */
+    const header = document.getElementById("header");
+    const onScroll = () => header.classList.toggle("scrolled", window.scrollY > 24);
     onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener("scroll", onScroll, { passive: true });
 
     /* ===== Mobile menu ===== */
-    const toggle = document.getElementById('menuToggle');
-    const menu = document.getElementById('mobileMenu');
-    toggle.addEventListener('click', () => {
-      const open = menu.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', String(open));
-      toggle.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+    const menuToggle = document.getElementById("menuToggle");
+    const mobileMenu = document.getElementById("mobileMenu");
+    menuToggle.addEventListener("click", () => {
+      const open = mobileMenu.classList.toggle("open");
+      menuToggle.setAttribute("aria-expanded", String(open));
+      menuToggle.setAttribute("aria-label", open ? I18N[currentLang]["aria.closeMenu"] : I18N[currentLang]["aria.openMenu"]);
     });
-    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-      menu.classList.remove('open');
-      toggle.setAttribute('aria-expanded', 'false');
+    mobileMenu.querySelectorAll("a").forEach(a => a.addEventListener("click", () => {
+      mobileMenu.classList.remove("open");
+      menuToggle.setAttribute("aria-expanded", "false");
     }));
 
-    /* ===== Tech stack (rendered from data, SVG icons not emoji) ===== */
+    /* ===== Language switcher (desktop dropdown) ===== */
+    const langBtn = document.getElementById("langBtn");
+    const langMenu = document.getElementById("langMenu");
+    const closeLang = () => { langMenu.classList.remove("open"); langBtn.setAttribute("aria-expanded", "false"); };
+    langBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const open = langMenu.classList.toggle("open");
+      langBtn.setAttribute("aria-expanded", String(open));
+    });
+    document.addEventListener("click", closeLang);
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeLang(); });
+
+    // any element with data-lang switches language
+    document.querySelectorAll("[data-lang]").forEach(btn => {
+      btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        applyLang(btn.getAttribute("data-lang"));
+        closeLang();
+      });
+    });
+
+    /* ===== Tech stack (SVG icons, not emoji) ===== */
     const ICON = {
       flow: '<path d="M12 2 L20 7 V17 L12 22 L4 17 V7 Z"/>',
       bolt: '<path d="M13 2 L4 14 h6 l-1 8 9-12 h-6 z"/>',
@@ -691,77 +817,84 @@
       plug: '<path d="M9 2v6M15 2v6M7 8h10v3a5 5 0 0 1-10 0V8zM12 16v6"/>'
     };
     const stack = [
-      ['n8n','flow'], ['Make (Integromat)','bolt'], ['OpenAI / ChatGPT','brain'],
-      ['Google Workspace','grid'], ['Retell AI · Vapi','voice'], ['Airtable · Notion','board'],
-      ['WhatsApp Business API','chat'], ['Stripe · Pix APIs','card'], ['Python','code'],
-      ['REST APIs / Webhooks','plug']
+      ["n8n", "flow"], ["Make (Integromat)", "bolt"], ["OpenAI / ChatGPT", "brain"],
+      ["Google Workspace", "grid"], ["Retell AI · Vapi", "voice"], ["Airtable · Notion", "board"],
+      ["WhatsApp Business API", "chat"], ["Stripe · Pix APIs", "card"], ["Python", "code"],
+      ["REST APIs / Webhooks", "plug"]
     ];
-    document.getElementById('stackGrid').innerHTML = stack.map(([name, ic]) => `
+    document.getElementById("stackGrid").innerHTML = stack.map(([name, ic]) => `
       <div class="stack-item">
         <svg class="si-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">${ICON[ic]}</svg>
         <span>${name}</span>
-      </div>`).join('');
+      </div>`).join("");
 
     /* ===== Pointer-follow glow on service cards ===== */
-    document.querySelectorAll('[data-tilt]').forEach(card => {
-      card.addEventListener('pointermove', e => {
+    document.querySelectorAll("[data-tilt]").forEach(card => {
+      card.addEventListener("pointermove", e => {
         const r = card.getBoundingClientRect();
-        card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
-        card.style.setProperty('--my', (e.clientY - r.top) + 'px');
+        card.style.setProperty("--mx", (e.clientX - r.left) + "px");
+        card.style.setProperty("--my", (e.clientY - r.top) + "px");
       });
     });
 
-    /* ===== Reveal on scroll (IntersectionObserver) ===== */
-    const reveals = document.querySelectorAll('.reveal');
-    if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    /* ===== Reveal on scroll ===== */
+    const reveals = document.querySelectorAll(".reveal");
+    if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       const io = new IntersectionObserver((entries) => {
-        entries.forEach(en => {
-          if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
-        });
-      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+        entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); } });
+      }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
       reveals.forEach(el => io.observe(el));
     } else {
-      reveals.forEach(el => el.classList.add('in'));
+      reveals.forEach(el => el.classList.add("in"));
     }
 
-    /* ===== Contact form (AJAX to Formspree, mailto fallback) ===== */
-    const form = document.getElementById('contactForm');
-    const statusEl = document.getElementById('formStatus');
-    form.addEventListener('submit', async (e) => {
+    /* ===== Contact form ===== */
+    const form = document.getElementById("contactForm");
+    const statusEl = document.getElementById("formStatus");
+    form.addEventListener("submit", async (e) => {
       e.preventDefault();
-      const action = form.getAttribute('action');
-      statusEl.className = 'form-status';
-      statusEl.textContent = '';
+      const dict = I18N[currentLang];
+      const action = form.getAttribute("action");
+      statusEl.className = "form-status";
+      statusEl.textContent = "";
 
       if (!form.checkValidity()) {
-        statusEl.classList.add('err');
-        statusEl.textContent = 'Por favor, preencha nome e e-mail válidos.';
+        statusEl.classList.add("err");
+        statusEl.textContent = dict["status.invalid"];
         form.reportValidity();
         return;
       }
-
-      // If Formspree endpoint not configured yet, fall back to mailto.
-      if (action.includes('PLACEHOLDER')) {
+      if (action.includes("PLACEHOLDER")) {
         const d = new FormData(form);
-        const body = `Nome: ${d.get('nome')}%0D%0AE-mail: ${d.get('email')}%0D%0AInstituição: ${d.get('empresa')||''}%0D%0A%0D%0A${d.get('mensagem')||''}`;
-        window.location.href = `mailto:contato@opusai.com.br?subject=Contato%20via%20site%20Opus%20AI&body=${body}`;
-        statusEl.classList.add('ok');
-        statusEl.textContent = 'Abrindo seu cliente de e-mail…';
+        const body = `Nome: ${d.get("nome")}%0D%0AE-mail: ${d.get("email")}%0D%0A${dict["form.company"]}: ${d.get("empresa") || ""}%0D%0A%0D%0A${d.get("mensagem") || ""}`;
+        window.location.href = `mailto:contato@opusai.com.br?subject=Opus%20AI%20website%20contact&body=${body}`;
+        statusEl.classList.add("ok");
+        statusEl.textContent = dict["status.mailto"];
         return;
       }
-
       try {
-        const res = await fetch(action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } });
-        if (res.ok) {
-          form.reset();
-          statusEl.classList.add('ok');
-          statusEl.textContent = 'Mensagem enviada. Retornaremos em breve. Obrigado!';
-        } else { throw new Error('fail'); }
+        const res = await fetch(action, { method: "POST", body: new FormData(form), headers: { "Accept": "application/json" } });
+        if (res.ok) { form.reset(); statusEl.classList.add("ok"); statusEl.textContent = dict["status.ok"]; }
+        else { throw new Error("fail"); }
       } catch (err) {
-        statusEl.classList.add('err');
-        statusEl.textContent = 'Não foi possível enviar agora. Escreva para contato@opusai.com.br.';
+        statusEl.classList.add("err");
+        statusEl.textContent = dict["status.err"];
       }
     });
+
+    /* ===== Init: saved language, else browser hint, else English ===== */
+    (function initLang() {
+      let lang = "en";
+      try {
+        const saved = localStorage.getItem("opusai_lang");
+        if (saved && SUPPORTED.includes(saved)) lang = saved;
+        else {
+          const nav = (navigator.language || "en").slice(0, 2).toLowerCase();
+          if (SUPPORTED.includes(nav)) lang = nav;
+        }
+      } catch (e) {}
+      applyLang(lang);
+    })();
   </script>
 </body>
 </html>
