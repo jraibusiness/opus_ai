@@ -10,7 +10,8 @@
   <meta name="keywords" content="AI automation, n8n, AI agents, process automation, cultural institutions, nonprofit, artificial intelligence Brazil">
   <meta name="author" content="Opus AI">
   <meta name="theme-color" content="#0A0A0F">
-  <link rel="canonical" href="https://opusai.com.br/">
+  <!-- Domain not yet defined — canonical omitted until the live domain is set -->
+  <!-- <link rel="canonical" href=""> -->
 
   <!-- ===== Open Graph ===== -->
   <meta property="og:type" content="website">
@@ -21,7 +22,7 @@
   <meta property="og:site_name" content="Opus AI">
   <meta property="og:title" content="Opus AI — Technology with a Creative Soul">
   <meta property="og:description" content="Intelligent automation for those who don't want to waste time on technology. Real cases, measurable results.">
-  <meta property="og:url" content="https://opusai.com.br/">
+  <!-- og:url omitted until the live domain is set -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Opus AI — Technology with a Creative Soul">
   <meta name="twitter:description" content="Intelligent automation for those who don't want to waste time on technology. Real cases, measurable results.">
@@ -41,8 +42,7 @@
     "@type": "Organization",
     "name": "Opus AI",
     "description": "Intelligent AI automation for cultural institutions and nonprofit organizations.",
-    "url": "https://opusai.com.br",
-    "email": "contato@opusai.com.br",
+    "email": "contato@studiokephra.org",
     "slogan": "Technology with a Creative Soul",
     "founder": { "@type": "Person", "name": "João Rocha" },
     "areaServed": "BR",
@@ -175,6 +175,29 @@
       .staff .pulse { stroke-dasharray: none; opacity:.4; }
     }
 
+    /* ========== STATS / TRUST BAND ========== */
+    .stats { padding: 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: linear-gradient(180deg, rgba(200,169,110,.04), transparent); }
+    .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; padding: clamp(40px, 6vw, 64px) 0; }
+    .stat { text-align: center; position: relative; }
+    .stat + .stat::before { content:""; position: absolute; left: -9px; top: 12%; bottom: 12%; width: 1px; background: var(--border); }
+    .stat .v { font-family: var(--font-display); font-size: clamp(2rem, 4.4vw, 2.9rem); color: var(--gold); line-height: 1; letter-spacing: -.01em; }
+    .stat .v sup { font-size: .42em; font-weight: 600; vertical-align: super; }
+    .stat .l { margin-top: 12px; font-size: .82rem; color: var(--muted); font-family: var(--font-mono); letter-spacing: .04em; line-height: 1.45; max-width: 18ch; margin-left: auto; margin-right: auto; }
+    @media (max-width: 768px) {
+      .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 30px 18px; }
+      .stat + .stat::before { display: none; }
+    }
+
+    /* ========== ACTIVE NAV (scrollspy) ========== */
+    .nav-links a.active, .mobile-menu a.active { color: var(--text); }
+    .nav-links a.active::after { width: 100%; }
+
+    /* ========== SCROLL-TO-TOP ========== */
+    .to-top { position: fixed; right: 22px; bottom: 22px; z-index: 90; width: 46px; height: 46px; border-radius: 50%; border: 1px solid var(--border); background: rgba(26,26,46,.8); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); color: var(--text); display: grid; place-items: center; cursor: pointer; opacity: 0; transform: translateY(12px); pointer-events: none; transition: opacity .3s var(--ease), transform .3s var(--ease), border-color .25s var(--ease), color .25s var(--ease); }
+    .to-top.show { opacity: 1; transform: none; pointer-events: auto; }
+    .to-top:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+    .to-top svg { width: 20px; height: 20px; }
+
     /* ========== PILLARS ========== */
     .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 56px; }
     .pillar { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); padding: 34px 30px; transition: transform .3s var(--ease), border-color .3s var(--ease); }
@@ -231,6 +254,10 @@
     .contact-links a { display: inline-flex; align-items: center; gap: 12px; color: var(--muted); transition: color .2s var(--ease); width: fit-content; }
     .contact-links a:hover { color: var(--gold); }
     .contact-links svg { width: 18px; height: 18px; }
+    .contact-links .contact-primary { width: fit-content; padding: 13px 22px; }
+    .contact-links .contact-primary svg { width: 20px; height: 20px; }
+    .contact-links .contact-email { font-size: .92rem; font-family: var(--font-mono); letter-spacing: .02em; opacity: .8; }
+    .contact-links .contact-email:hover { opacity: 1; }
     form { display: grid; gap: 18px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); padding: 36px; }
     .field { display: grid; gap: 8px; }
     .field label { font-size: .82rem; color: var(--muted); font-family: var(--font-mono); letter-spacing: .04em; }
@@ -385,6 +412,18 @@
       </div>
     </section>
 
+    <!-- ============ STATS / TRUST BAND ============ -->
+    <section class="stats" aria-label="Key metrics">
+      <div class="wrap">
+        <div class="stats-grid">
+          <div class="stat reveal"><div class="v" data-i18n="stat1.v">20 min</div><div class="l" data-i18n="stat1.l">Onboarding, previously 10 days</div></div>
+          <div class="stat reveal d1"><div class="v" data-i18n="stat2.v">24/7</div><div class="l" data-i18n="stat2.l">Automated enrollment</div></div>
+          <div class="stat reveal d1"><div class="v" data-i18n="stat3.v">End-to-end</div><div class="l" data-i18n="stat3.l">From diagnosis to deployment</div></div>
+          <div class="stat reveal d2"><div class="v" data-i18n="stat4.v">100%</div><div class="l" data-i18n="stat4.l">Focus on cultural &amp; nonprofit sector</div></div>
+        </div>
+      </div>
+    </section>
+
     <!-- ============ ABOUT ============ -->
     <section id="sobre" aria-labelledby="sobre-title">
       <div class="wrap">
@@ -409,7 +448,7 @@
             <p data-i18n="p3.text">We talk business without jargon. You understand what's being built and why.</p>
           </article>
         </div>
-        <p class="founder reveal" data-i18n-html="about.founder">Opus AI was founded by <b>João Rocha</b> — conductor, composer and AI automation specialist. This unusual combination is our greatest advantage: we deeply understand the world of the institutions we serve, because we live inside it.</p>
+        <p class="founder reveal" data-i18n-html="about.founder">Opus AI was founded by <b>João Rocha</b> — conductor, composer and AI automation specialist. The whole journey took shape from a personal need: as an artist, reconciling the time and energy spent on administrative tasks — especially those demanding constant follow-up — with the time devoted to conducting and composition. Solving my own operational bottlenecks became the method I now apply to institutions with the profile we serve. We understand this world deeply because we live inside it.</p>
       </div>
     </section>
 
@@ -454,14 +493,14 @@
       <div class="wrap">
         <div class="reveal">
           <p class="eyebrow" data-i18n="cases.eyebrow">Cases</p>
-          <h2 class="section-title" id="cases-title" data-i18n="cases.title">Projects we've delivered</h2>
+          <h2 class="section-title" id="cases-title" data-i18n="cases.title">Representative scenarios</h2>
         </div>
         <div class="cases">
 
           <article class="case reveal">
             <div class="case-main">
               <span class="case-cat" data-i18n="c1.cat">Onboarding Automation</span>
-              <h3>Conectando Orquestras Brasileiras <span style="font-size:1rem;color:var(--muted);font-family:var(--font-mono);">(COB)</span></h3>
+              <h3><span data-i18n="c1.name">Volunteer onboarding</span></h3>
               <div class="case-block"><div class="label" data-i18n="lbl.challenge">Challenge</div><p data-i18n="c1.challenge">The volunteer onboarding process took up to 10 days — multiple emails, manual scheduling, constant delays.</p></div>
               <div class="case-block"><div class="label" data-i18n="lbl.solution">Solution</div><p data-i18n="c1.solution">An end-to-end automation system that captures the volunteer's interest, qualifies their profile, schedules a meeting and delivers welcome materials automatically.</p></div>
             </div>
@@ -474,7 +513,7 @@
           <article class="case reveal">
             <div class="case-main">
               <span class="case-cat" data-i18n="c2.cat">Enrollment Automation</span>
-              <h3>Conservatório de Cubatão <span class="badge-status" data-i18n="st.dev">in development</span></h3>
+              <h3><span data-i18n="c2.name">Student enrollment</span> <span class="badge-status" data-i18n="st.dev">in development</span></h3>
               <div class="case-block"><div class="label" data-i18n="lbl.challenge">Challenge</div><p data-i18n="c2.challenge">A 100% in-person student enrollment process, with manual validation of payment receipts, inconsistent data and a high volume of administrative work.</p></div>
               <div class="case-block"><div class="label" data-i18n="lbl.solution">Solution</div><p data-i18n="c2.solution">An intelligent online enrollment system in 3 steps: personal data (with automatic age/education filtering) → course and schedule selection → integrated payment with automatic AI-based receipt validation.</p></div>
             </div>
@@ -487,7 +526,7 @@
           <article class="case reveal">
             <div class="case-main">
               <span class="case-cat" data-i18n="c3.cat">Technical Scheduling Automation</span>
-              <h3>Steinway &amp; Sons <span class="badge-status" data-i18n="st.prospect">in prospecting</span></h3>
+              <h3><span data-i18n="c3.name">Technical visit scheduling</span> <span class="badge-status" data-i18n="st.prospect">in prospecting</span></h3>
               <div class="case-block"><div class="label" data-i18n="lbl.challenge">Challenge</div><p data-i18n="c3.challenge">A team of piano technicians with no visit management system, causing scheduling conflicts and unnecessary travel.</p></div>
               <div class="case-block"><div class="label" data-i18n="lbl.solutionProposed">Proposed solution</div><p data-i18n="c3.solution">An intelligent scheduling system with automatic notifications, location-based routing and customer history.</p></div>
             </div>
@@ -522,18 +561,22 @@
             <h2 id="contato-title" data-i18n="contact.title">Ready to reclaim your time?</h2>
             <p class="contact-lead" data-i18n="contact.lead">Book a 20-minute conversation. No commitment. No sales pitch. Just an honest diagnosis of what we can do for you.</p>
             <div class="contact-links">
-              <a href="mailto:contato@opusai.com.br">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
-                contato@opusai.com.br
-              </a>
-              <a href="https://www.linkedin.com/showcase/134414056/" target="_blank" rel="noopener" aria-label="Opus AI on LinkedIn">
+              <a class="btn btn-gold contact-primary" href="https://www.linkedin.com/showcase/134414056/" target="_blank" rel="noopener" aria-label="Opus AI on LinkedIn">
                 <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 1 1 0 3.5a2.5 2.5 0 0 1 4.98 0zM.25 8h4.5v12.5H.25V8zm7 0h4.31v1.71h.06c.6-1.13 2.06-2.32 4.24-2.32 4.54 0 5.38 2.99 5.38 6.87v7.74h-4.5v-6.86c0-1.64-.03-3.74-2.28-3.74-2.28 0-2.63 1.78-2.63 3.62v6.98h-4.5V8z"/></svg>
                 <span data-i18n="contact.linkedin">Opus AI on LinkedIn</span>
+              </a>
+              <a class="contact-email" href="mailto:contato@studiokephra.org">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+                contato@studiokephra.org
+              </a>
+              <a class="contact-email" href="https://github.com/jraibusiness" target="_blank" rel="noopener" aria-label="Opus AI on GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5A11.5 11.5 0 0 0 .5 12 11.5 11.5 0 0 0 8.36 23c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.34-1.3-1.7-1.3-1.7-1.06-.72.08-.71.08-.71 1.17.08 1.79 1.2 1.79 1.2 1.04 1.79 2.74 1.27 3.4.97.11-.76.41-1.27.74-1.56-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.43-2.69 5.41-5.25 5.69.42.36.8 1.08.8 2.18v3.23c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5z"/></svg>
+                <span data-i18n="contact.github">See our projects on GitHub</span>
               </a>
             </div>
           </div>
 
-          <form class="reveal d1" id="contactForm" action="https://formspree.io/f/PLACEHOLDER" method="POST" novalidate>
+          <form class="reveal d1" id="contactForm" action="mailto:contato@studiokephra.org" method="post" enctype="text/plain" novalidate>
             <div class="field">
               <label for="nome" data-i18n="form.name">Name</label>
               <input type="text" id="nome" name="nome" autocomplete="name" required data-i18n-ph="ph.name" placeholder="Your name">
@@ -575,8 +618,12 @@
         <a href="#contato" data-i18n="nav.contact">Contact</a>
       </nav>
     </div>
-    <div class="wrap"><p class="copy" data-i18n="footer.copy">© 2025 Opus AI. All rights reserved.</p></div>
+    <div class="wrap"><p class="copy" data-i18n="footer.copy">© 2026 Opus AI. All rights reserved.</p></div>
   </footer>
+
+  <button class="to-top" id="toTop" aria-label="Back to top" hidden>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
 
   <script>
     /* =================== i18n =================== */
@@ -594,26 +641,31 @@
         "p1.title": "Technology with purpose", "p1.text": "We don't install tools. We build systems that solve your specific problem.",
         "p2.title": "Measurable results", "p2.text": "Every project has a clear success metric. Time saved. Costs reduced. Process eliminated.",
         "p3.title": "A partner, not a vendor", "p3.text": "We talk business without jargon. You understand what's being built and why.",
-        "about.founder": "Opus AI was founded by <b>João Rocha</b> — conductor, composer and AI automation specialist. This unusual combination is our greatest advantage: we deeply understand the world of the institutions we serve, because we live inside it.",
+        "about.founder": "Opus AI was founded by <b>João Rocha</b> — conductor, composer and AI automation specialist. The whole journey took shape from a personal need: as an artist, reconciling the time and energy spent on administrative tasks — especially those demanding constant follow-up — with the time devoted to conducting and composition. Solving my own operational bottlenecks became the method I now apply to institutions with the profile we serve. We understand this world deeply because we live inside it.",
         "services.eyebrow": "Services", "services.title": "What we build for you",
         "s1.title": "Process Automation", "s1.text": "We map your manual, repetitive processes and replace them with intelligent systems. From volunteer onboarding to student enrollment — if it happens every day, it can be automated.",
         "s2.title": "Tool Integration", "s2.text": "Your systems don't talk to each other? We connect CRM, spreadsheets, email, WhatsApp, payment platforms and any tool you already use — without replacing what works.",
         "s3.title": "AI Agents & Chatbots", "s3.text": "AI agents that respond, qualify, schedule and execute tasks without human intervention. Customer service, lead triage, internal support — available 24/7.",
         "s4.title": "Strategic Consulting", "s4.text": "Diagnosis of operational and financial bottlenecks, an AI implementation plan and follow-up throughout the process. For those who want to understand before investing.",
-        "cases.eyebrow": "Cases", "cases.title": "Projects we've delivered",
+        "cases.eyebrow": "Cases", "cases.title": "Representative scenarios",
+        "c1.name": "Volunteer onboarding", "c2.name": "Student enrollment", "c3.name": "Technical visit scheduling",
         "lbl.challenge": "Challenge", "lbl.solution": "Solution", "lbl.solutionProposed": "Proposed solution", "lbl.result": "Result", "lbl.scopeProposed": "Proposed scope",
         "st.dev": "in development", "st.prospect": "in prospecting",
         "c1.cat": "Onboarding Automation", "c1.challenge": "The volunteer onboarding process took up to 10 days — multiple emails, manual scheduling, constant delays.", "c1.solution": "An end-to-end automation system that captures the volunteer's interest, qualifies their profile, schedules a meeting and delivers welcome materials automatically.", "c1.result": "Process cut from 10 days to <b>under 20 minutes</b>",
         "c2.cat": "Enrollment Automation", "c2.challenge": "A 100% in-person student enrollment process, with manual validation of payment receipts, inconsistent data and a high volume of administrative work.", "c2.solution": "An intelligent online enrollment system in 3 steps: personal data (with automatic age/education filtering) → course and schedule selection → integrated payment with automatic AI-based receipt validation.", "c2.result": "End of manual receipt checking <b>· Enroll 24/7</b>",
         "c3.cat": "Technical Scheduling Automation", "c3.challenge": "A team of piano technicians with no visit management system, causing scheduling conflicts and unnecessary travel.", "c3.solution": "An intelligent scheduling system with automatic notifications, location-based routing and customer history.", "c3.result": "Conflict-free schedule <b>· Optimized routes</b>",
-        "cases.note": "More cases coming soon — a company growing its portfolio.",
+        "cases.note": "A growing portfolio — new scenarios in motion.",
         "stack.eyebrow": "Stack", "stack.title": "Tools we master",
-        "contact.eyebrow": "Contact", "contact.title": "Ready to reclaim your time?", "contact.lead": "Book a 20-minute conversation. No commitment. No sales pitch. Just an honest diagnosis of what we can do for you.", "contact.linkedin": "Opus AI on LinkedIn",
+        "stat1.v": "20 min", "stat1.l": "Onboarding, previously 10 days",
+        "stat2.v": "24/7", "stat2.l": "Automated enrollment",
+        "stat3.v": "End-to-end", "stat3.l": "From diagnosis to deployment",
+        "stat4.v": "100%", "stat4.l": "Focus on cultural & nonprofit sector",
+        "contact.eyebrow": "Contact", "contact.title": "Ready to reclaim your time?", "contact.lead": "Book a 20-minute conversation. No commitment. No sales pitch. Just an honest diagnosis of what we can do for you.", "contact.linkedin": "Opus AI on LinkedIn", "contact.github": "See our projects on GitHub",
         "form.name": "Name", "form.email": "Email", "form.company": "Company / Institution", "form.message": "Message", "form.optional": "(optional)", "form.submit": "Send message", "form.note": "By submitting, you agree to be contacted by the Opus AI team.",
         "ph.name": "Your name", "ph.email": "you@institution.com", "ph.company": "Organization name", "ph.message": "Tell us briefly what you'd like to automate",
-        "footer.tag": "Technology with a Creative Soul", "footer.copy": "© 2025 Opus AI. All rights reserved.",
+        "footer.tag": "Technology with a Creative Soul", "footer.copy": "© 2026 Opus AI. All rights reserved.",
         "aria.openMenu": "Open menu", "aria.closeMenu": "Close menu",
-        "status.invalid": "Please fill in a valid name and email.", "status.mailto": "Opening your email client…", "status.ok": "Message sent. We'll get back to you soon. Thank you!", "status.err": "Couldn't send right now. Please write to contato@opusai.com.br."
+        "status.invalid": "Please fill in a valid name and email.", "status.mailto": "Opening your email client…", "status.ok": "Message sent. We'll get back to you soon. Thank you!", "status.err": "Couldn't send right now. Please write to contato@studiokephra.org."
       },
       pt: {
         "doc.title": "Opus AI — Automação Inteligente para Instituições Culturais",
@@ -628,26 +680,31 @@
         "p1.title": "Tecnologia com propósito", "p1.text": "Não instalamos ferramentas. Criamos sistemas que resolvem o seu problema específico.",
         "p2.title": "Resultado mensurável", "p2.text": "Cada projeto tem uma métrica de sucesso clara. Tempo economizado. Custo reduzido. Processo eliminado.",
         "p3.title": "Parceiro, não fornecedor", "p3.text": "Falamos de negócios sem jargões. Você entende o que está sendo construído e por quê.",
-        "about.founder": "A Opus AI foi fundada por <b>João Rocha</b> — maestro, compositor e especialista em automação com IA. Essa combinação incomum é nossa maior vantagem: entendemos profundamente o universo das instituições que atendemos, porque vivemos dentro dele.",
+        "about.founder": "A Opus AI foi fundada por <b>João Rocha</b> — maestro, compositor e especialista em automação com IA. Toda a jornada tomou forma a partir de uma necessidade pessoal: como artista, equacionar o tempo e a energia destinados a tarefas administrativas — sobretudo as que exigem constante follow-up — e o tempo dedicado à regência e à composição. Resolver meus próprios gargalos operacionais tornou-se o método que hoje aplico a instituições com o perfil que atendemos. Entendemos esse universo profundamente porque vivemos dentro dele.",
         "services.eyebrow": "Serviços", "services.title": "O que construímos para você",
         "s1.title": "Automação de Processos", "s1.text": "Mapeamos seus processos manuais e repetitivos e os substituímos por sistemas inteligentes. De onboarding de voluntários a inscrições de alunos — se acontece todo dia, pode ser automatizado.",
         "s2.title": "Integração de Ferramentas", "s2.text": "Seus sistemas não conversam entre si? Conectamos CRM, planilhas, e-mail, WhatsApp, plataformas de pagamento e qualquer ferramenta que você já usa — sem trocar o que funciona.",
         "s3.title": "AI Agents & Chatbots", "s3.text": "Agentes de IA que respondem, qualificam, agendam e executam tarefas sem intervenção humana. Atendimento, triagem de leads, suporte interno — disponível 24h.",
         "s4.title": "Consultoria Estratégica", "s4.text": "Diagnóstico de gargalos operacionais e financeiros, plano de implementação de IA e acompanhamento do processo. Para quem quer entender antes de investir.",
-        "cases.eyebrow": "Cases", "cases.title": "Projetos que entregamos",
+        "cases.eyebrow": "Cases", "cases.title": "Cenários representativos",
+        "c1.name": "Onboarding de voluntários", "c2.name": "Inscrição de alunos", "c3.name": "Agendamento de visitas técnicas",
         "lbl.challenge": "Desafio", "lbl.solution": "Solução", "lbl.solutionProposed": "Solução proposta", "lbl.result": "Resultado", "lbl.scopeProposed": "Escopo proposto",
         "st.dev": "em desenvolvimento", "st.prospect": "em prospecção",
         "c1.cat": "Automação de Onboarding", "c1.challenge": "O processo de integração de voluntários levava até 10 dias — múltiplos e-mails, agendamentos manuais, atrasos constantes.", "c1.solution": "Sistema de automação end-to-end que captura o interesse do voluntário, qualifica o perfil, agenda reunião e entrega materiais de boas-vindas automaticamente.", "c1.result": "Processo reduzido de 10 dias para <b>menos de 20 minutos</b>",
         "c2.cat": "Automação de Inscrições", "c2.challenge": "Processo de inscrição de alunos 100% presencial, com validação manual de comprovantes de pagamento, dados inconsistentes e alto volume de trabalho administrativo.", "c2.solution": "Sistema de inscrição online inteligente em 3 etapas: dados pessoais (com corte por idade/escolaridade automático) → escolha de curso e período → pagamento integrado com validação automática do comprovante via IA.", "c2.result": "Fim da verificação manual de comprovantes <b>· Inscrição 24/7</b>",
         "c3.cat": "Automação de Agendamento Técnico", "c3.challenge": "Equipe de técnicos de piano sem sistema de gestão de visitas, gerando conflitos de agenda e deslocamentos desnecessários.", "c3.solution": "Sistema de agendamento inteligente com notificações automáticas, roteamento por localização e histórico do cliente.", "c3.result": "Agenda sem conflitos <b>· Rotas otimizadas</b>",
-        "cases.note": "Mais cases em breve — empresa em fase de crescimento de portfólio.",
+        "cases.note": "Portfólio em crescimento — novos cenários em andamento.",
         "stack.eyebrow": "Stack", "stack.title": "Ferramentas que dominamos",
-        "contact.eyebrow": "Contato", "contact.title": "Pronto para recuperar seu tempo?", "contact.lead": "Agende uma conversa de 20 minutos. Sem compromisso. Sem pitch de vendas. Só um diagnóstico honesto do que podemos fazer por você.", "contact.linkedin": "Opus AI no LinkedIn",
+        "stat1.v": "20 min", "stat1.l": "Onboarding, antes 10 dias",
+        "stat2.v": "24/7", "stat2.l": "Inscrições automatizadas",
+        "stat3.v": "Ponta a ponta", "stat3.l": "Do diagnóstico à implantação",
+        "stat4.v": "100%", "stat4.l": "Foco no setor cultural e terceiro setor",
+        "contact.eyebrow": "Contato", "contact.title": "Pronto para recuperar seu tempo?", "contact.lead": "Agende uma conversa de 20 minutos. Sem compromisso. Sem pitch de vendas. Só um diagnóstico honesto do que podemos fazer por você.", "contact.linkedin": "Opus AI no LinkedIn", "contact.github": "Veja nossos projetos no GitHub",
         "form.name": "Nome", "form.email": "E-mail", "form.company": "Empresa / Instituição", "form.message": "Mensagem", "form.optional": "(opcional)", "form.submit": "Enviar mensagem", "form.note": "Ao enviar, você concorda em ser contatado pela equipe da Opus AI.",
         "ph.name": "Seu nome", "ph.email": "voce@instituicao.com.br", "ph.company": "Nome da organização", "ph.message": "Conte rapidamente o que você gostaria de automatizar",
-        "footer.tag": "Tecnologia com Alma Criativa", "footer.copy": "© 2025 Opus AI. Todos os direitos reservados.",
+        "footer.tag": "Tecnologia com Alma Criativa", "footer.copy": "© 2026 Opus AI. Todos os direitos reservados.",
         "aria.openMenu": "Abrir menu", "aria.closeMenu": "Fechar menu",
-        "status.invalid": "Por favor, preencha nome e e-mail válidos.", "status.mailto": "Abrindo seu cliente de e-mail…", "status.ok": "Mensagem enviada. Retornaremos em breve. Obrigado!", "status.err": "Não foi possível enviar agora. Escreva para contato@opusai.com.br."
+        "status.invalid": "Por favor, preencha nome e e-mail válidos.", "status.mailto": "Abrindo seu cliente de e-mail…", "status.ok": "Mensagem enviada. Retornaremos em breve. Obrigado!", "status.err": "Não foi possível enviar agora. Escreva para contato@studiokephra.org."
       },
       es: {
         "doc.title": "Opus AI — Automatización Inteligente para Instituciones Culturales",
@@ -662,26 +719,31 @@
         "p1.title": "Tecnología con propósito", "p1.text": "No instalamos herramientas. Creamos sistemas que resuelven tu problema específico.",
         "p2.title": "Resultados medibles", "p2.text": "Cada proyecto tiene una métrica de éxito clara. Tiempo ahorrado. Costos reducidos. Proceso eliminado.",
         "p3.title": "Un socio, no un proveedor", "p3.text": "Hablamos de negocios sin jergas. Entiendes qué se está construyendo y por qué.",
-        "about.founder": "Opus AI fue fundada por <b>João Rocha</b> — director de orquesta, compositor y especialista en automatización con IA. Esta combinación poco común es nuestra mayor ventaja: entendemos profundamente el universo de las instituciones que atendemos, porque vivimos dentro de él.",
+        "about.founder": "Opus AI fue fundada por <b>João Rocha</b> — director de orquesta, compositor y especialista en automatización con IA. Toda la trayectoria tomó forma a partir de una necesidad personal: como artista, equilibrar el tiempo y la energía destinados a tareas administrativas — sobre todo las que exigen constante seguimiento — con el tiempo dedicado a la dirección y la composición. Resolver mis propios cuellos de botella operativos se convirtió en el método que hoy aplico a instituciones con el perfil que atendemos. Entendemos este universo profundamente porque vivimos dentro de él.",
         "services.eyebrow": "Servicios", "services.title": "Lo que construimos para ti",
         "s1.title": "Automatización de Procesos", "s1.text": "Mapeamos tus procesos manuales y repetitivos y los reemplazamos por sistemas inteligentes. Desde la incorporación de voluntarios hasta la inscripción de alumnos — si ocurre cada día, se puede automatizar.",
         "s2.title": "Integración de Herramientas", "s2.text": "¿Tus sistemas no se comunican entre sí? Conectamos CRM, hojas de cálculo, correo, WhatsApp, plataformas de pago y cualquier herramienta que ya usas — sin cambiar lo que funciona.",
         "s3.title": "Agentes de IA y Chatbots", "s3.text": "Agentes de IA que responden, califican, agendan y ejecutan tareas sin intervención humana. Atención, calificación de leads, soporte interno — disponible 24/7.",
         "s4.title": "Consultoría Estratégica", "s4.text": "Diagnóstico de cuellos de botella operativos y financieros, plan de implementación de IA y acompañamiento del proceso. Para quienes quieren entender antes de invertir.",
-        "cases.eyebrow": "Casos", "cases.title": "Proyectos que entregamos",
+        "cases.eyebrow": "Casos", "cases.title": "Escenarios representativos",
+        "c1.name": "Incorporación de voluntarios", "c2.name": "Inscripción de alumnos", "c3.name": "Agendamiento de visitas técnicas",
         "lbl.challenge": "Desafío", "lbl.solution": "Solución", "lbl.solutionProposed": "Solución propuesta", "lbl.result": "Resultado", "lbl.scopeProposed": "Alcance propuesto",
         "st.dev": "en desarrollo", "st.prospect": "en prospección",
         "c1.cat": "Automatización de Onboarding", "c1.challenge": "El proceso de integración de voluntarios tardaba hasta 10 días — múltiples correos, agendamientos manuales, retrasos constantes.", "c1.solution": "Sistema de automatización de extremo a extremo que capta el interés del voluntario, califica el perfil, agenda la reunión y entrega materiales de bienvenida automáticamente.", "c1.result": "Proceso reducido de 10 días a <b>menos de 20 minutos</b>",
         "c2.cat": "Automatización de Inscripciones", "c2.challenge": "Proceso de inscripción de alumnos 100% presencial, con validación manual de comprobantes de pago, datos inconsistentes y alto volumen de trabajo administrativo.", "c2.solution": "Sistema de inscripción en línea inteligente en 3 etapas: datos personales (con filtro automático por edad/escolaridad) → elección de curso y horario → pago integrado con validación automática del comprobante mediante IA.", "c2.result": "Fin de la verificación manual de comprobantes <b>· Inscripción 24/7</b>",
         "c3.cat": "Automatización de Agendamiento Técnico", "c3.challenge": "Equipo de técnicos de piano sin sistema de gestión de visitas, generando conflictos de agenda y desplazamientos innecesarios.", "c3.solution": "Sistema de agendamiento inteligente con notificaciones automáticas, enrutamiento por ubicación e historial del cliente.", "c3.result": "Agenda sin conflictos <b>· Rutas optimizadas</b>",
-        "cases.note": "Más casos próximamente — empresa en fase de crecimiento de portafolio.",
+        "cases.note": "Portafolio en crecimiento — nuevos escenarios en marcha.",
         "stack.eyebrow": "Stack", "stack.title": "Herramientas que dominamos",
-        "contact.eyebrow": "Contacto", "contact.title": "¿Listo para recuperar tu tiempo?", "contact.lead": "Agenda una conversación de 20 minutos. Sin compromiso. Sin discurso de ventas. Solo un diagnóstico honesto de lo que podemos hacer por ti.", "contact.linkedin": "Opus AI en LinkedIn",
+        "stat1.v": "20 min", "stat1.l": "Onboarding, antes 10 días",
+        "stat2.v": "24/7", "stat2.l": "Inscripciones automatizadas",
+        "stat3.v": "Punta a punta", "stat3.l": "Del diagnóstico al despliegue",
+        "stat4.v": "100%", "stat4.l": "Foco en sector cultural y tercer sector",
+        "contact.eyebrow": "Contacto", "contact.title": "¿Listo para recuperar tu tiempo?", "contact.lead": "Agenda una conversación de 20 minutos. Sin compromiso. Sin discurso de ventas. Solo un diagnóstico honesto de lo que podemos hacer por ti.", "contact.linkedin": "Opus AI en LinkedIn", "contact.github": "Mira nuestros proyectos en GitHub",
         "form.name": "Nombre", "form.email": "Correo", "form.company": "Empresa / Institución", "form.message": "Mensaje", "form.optional": "(opcional)", "form.submit": "Enviar mensaje", "form.note": "Al enviar, aceptas ser contactado por el equipo de Opus AI.",
         "ph.name": "Tu nombre", "ph.email": "tu@institucion.com", "ph.company": "Nombre de la organización", "ph.message": "Cuéntanos brevemente qué te gustaría automatizar",
-        "footer.tag": "Tecnología con Alma Creativa", "footer.copy": "© 2025 Opus AI. Todos los derechos reservados.",
+        "footer.tag": "Tecnología con Alma Creativa", "footer.copy": "© 2026 Opus AI. Todos los derechos reservados.",
         "aria.openMenu": "Abrir menú", "aria.closeMenu": "Cerrar menú",
-        "status.invalid": "Por favor, completa un nombre y un correo válidos.", "status.mailto": "Abriendo tu cliente de correo…", "status.ok": "Mensaje enviado. Te responderemos pronto. ¡Gracias!", "status.err": "No se pudo enviar ahora. Escribe a contato@opusai.com.br."
+        "status.invalid": "Por favor, completa un nombre y un correo válidos.", "status.mailto": "Abriendo tu cliente de correo…", "status.ok": "Mensaje enviado. Te responderemos pronto. ¡Gracias!", "status.err": "No se pudo enviar ahora. Escribe a contato@studiokephra.org."
       },
       de: {
         "doc.title": "Opus AI — Intelligente Automatisierung für Kulturinstitutionen",
@@ -696,26 +758,31 @@
         "p1.title": "Technologie mit Sinn", "p1.text": "Wir installieren keine Tools. Wir bauen Systeme, die Ihr konkretes Problem lösen.",
         "p2.title": "Messbare Ergebnisse", "p2.text": "Jedes Projekt hat eine klare Erfolgskennzahl. Gesparte Zeit. Gesenkte Kosten. Eliminierter Prozess.",
         "p3.title": "Partner, kein Lieferant", "p3.text": "Wir sprechen über Geschäft ohne Fachjargon. Sie verstehen, was gebaut wird und warum.",
-        "about.founder": "Opus AI wurde von <b>João Rocha</b> gegründet — Dirigent, Komponist und Spezialist für KI-Automatisierung. Diese ungewöhnliche Kombination ist unser größter Vorteil: Wir verstehen die Welt der Institutionen, die wir betreuen, zutiefst, weil wir selbst darin leben.",
+        "about.founder": "Opus AI wurde von <b>João Rocha</b> gegründet — Dirigent, Komponist und Spezialist für KI-Automatisierung. Die ganze Reise nahm Gestalt an aus einem persönlichen Bedürfnis: als Künstler Zeit und Energie für administrative Aufgaben — insbesondere jene, die ständiges Nachfassen erfordern — mit der Zeit für Dirigieren und Komponieren in Einklang zu bringen. Die Lösung meiner eigenen operativen Engpässe wurde zur Methode, die ich heute auf Institutionen mit dem von uns betreuten Profil anwende. Wir verstehen diese Welt zutiefst, weil wir selbst darin leben.",
         "services.eyebrow": "Leistungen", "services.title": "Was wir für Sie bauen",
         "s1.title": "Prozessautomatisierung", "s1.text": "Wir erfassen Ihre manuellen, sich wiederholenden Prozesse und ersetzen sie durch intelligente Systeme. Vom Onboarding von Freiwilligen bis zur Anmeldung von Schülern — was täglich passiert, lässt sich automatisieren.",
         "s2.title": "Tool-Integration", "s2.text": "Ihre Systeme kommunizieren nicht miteinander? Wir verbinden CRM, Tabellen, E-Mail, WhatsApp, Zahlungsplattformen und jedes Tool, das Sie bereits nutzen — ohne zu ersetzen, was funktioniert.",
         "s3.title": "KI-Agenten & Chatbots", "s3.text": "KI-Agenten, die antworten, qualifizieren, terminieren und Aufgaben ohne menschliches Eingreifen ausführen. Kundenservice, Lead-Qualifizierung, interner Support — rund um die Uhr verfügbar.",
         "s4.title": "Strategische Beratung", "s4.text": "Diagnose operativer und finanzieller Engpässe, ein KI-Implementierungsplan und Begleitung über den gesamten Prozess. Für alle, die verstehen wollen, bevor sie investieren.",
-        "cases.eyebrow": "Referenzen", "cases.title": "Projekte, die wir umgesetzt haben",
+        "cases.eyebrow": "Referenzen", "cases.title": "Repräsentative Szenarien",
+        "c1.name": "Volontär-Onboarding", "c2.name": "Schülereinschreibung", "c3.name": "Terminplanung für Technikbesuche",
         "lbl.challenge": "Herausforderung", "lbl.solution": "Lösung", "lbl.solutionProposed": "Vorgeschlagene Lösung", "lbl.result": "Ergebnis", "lbl.scopeProposed": "Vorgeschlagener Umfang",
         "st.dev": "in Entwicklung", "st.prospect": "in Akquise",
         "c1.cat": "Onboarding-Automatisierung", "c1.challenge": "Das Onboarding von Freiwilligen dauerte bis zu 10 Tage — zahlreiche E-Mails, manuelle Terminplanung, ständige Verzögerungen.", "c1.solution": "Ein durchgängiges Automatisierungssystem, das das Interesse des Freiwilligen erfasst, das Profil qualifiziert, ein Treffen plant und Willkommensmaterialien automatisch bereitstellt.", "c1.result": "Prozess von 10 Tagen auf <b>unter 20 Minuten</b> verkürzt",
         "c2.cat": "Anmelde-Automatisierung", "c2.challenge": "Ein zu 100 % persönlicher Anmeldeprozess für Schüler, mit manueller Prüfung von Zahlungsbelegen, inkonsistenten Daten und hohem Verwaltungsaufwand.", "c2.solution": "Ein intelligentes Online-Anmeldesystem in 3 Schritten: persönliche Daten (mit automatischem Filter nach Alter/Bildung) → Kurs- und Terminwahl → integrierte Zahlung mit automatischer KI-Belegprüfung.", "c2.result": "Schluss mit manueller Belegprüfung <b>· Anmeldung rund um die Uhr</b>",
         "c3.cat": "Terminplanungs-Automatisierung", "c3.challenge": "Ein Team von Klaviertechnikern ohne Besuchsmanagementsystem, was zu Terminkonflikten und unnötigen Fahrten führt.", "c3.solution": "Ein intelligentes Terminplanungssystem mit automatischen Benachrichtigungen, standortbasierter Routenplanung und Kundenhistorie.", "c3.result": "Konfliktfreier Terminplan <b>· Optimierte Routen</b>",
-        "cases.note": "Weitere Referenzen folgen in Kürze — ein Unternehmen, das sein Portfolio ausbaut.",
+        "cases.note": "Wachsendes Portfolio — neue Szenarien in Arbeit.",
         "stack.eyebrow": "Stack", "stack.title": "Werkzeuge, die wir beherrschen",
-        "contact.eyebrow": "Kontakt", "contact.title": "Bereit, Ihre Zeit zurückzugewinnen?", "contact.lead": "Vereinbaren Sie ein 20-minütiges Gespräch. Unverbindlich. Kein Verkaufsgespräch. Nur eine ehrliche Einschätzung, was wir für Sie tun können.", "contact.linkedin": "Opus AI auf LinkedIn",
+        "stat1.v": "20 Min", "stat1.l": "Onboarding, früher 10 Tage",
+        "stat2.v": "24/7", "stat2.l": "Automatisierte Anmeldungen",
+        "stat3.v": "End-to-end", "stat3.l": "Von Diagnose bis Einsatz",
+        "stat4.v": "100%", "stat4.l": "Fokus auf Kultursektor & Nonprofit",
+        "contact.eyebrow": "Kontakt", "contact.title": "Bereit, Ihre Zeit zurückzugewinnen?", "contact.lead": "Vereinbaren Sie ein 20-minütiges Gespräch. Unverbindlich. Kein Verkaufsgespräch. Nur eine ehrliche Einschätzung, was wir für Sie tun können.", "contact.linkedin": "Opus AI auf LinkedIn", "contact.github": "Siehe unsere Projekte auf GitHub",
         "form.name": "Name", "form.email": "E-Mail", "form.company": "Unternehmen / Institution", "form.message": "Nachricht", "form.optional": "(optional)", "form.submit": "Nachricht senden", "form.note": "Mit dem Absenden erklären Sie sich damit einverstanden, vom Opus-AI-Team kontaktiert zu werden.",
         "ph.name": "Ihr Name", "ph.email": "sie@institution.de", "ph.company": "Name der Organisation", "ph.message": "Erzählen Sie kurz, was Sie automatisieren möchten",
-        "footer.tag": "Technologie mit kreativer Seele", "footer.copy": "© 2025 Opus AI. Alle Rechte vorbehalten.",
+        "footer.tag": "Technologie mit kreativer Seele", "footer.copy": "© 2026 Opus AI. Alle Rechte vorbehalten.",
         "aria.openMenu": "Menü öffnen", "aria.closeMenu": "Menü schließen",
-        "status.invalid": "Bitte geben Sie einen gültigen Namen und eine gültige E-Mail an.", "status.mailto": "Ihr E-Mail-Programm wird geöffnet…", "status.ok": "Nachricht gesendet. Wir melden uns bald. Vielen Dank!", "status.err": "Senden derzeit nicht möglich. Bitte schreiben Sie an contato@opusai.com.br."
+        "status.invalid": "Bitte geben Sie einen gültigen Namen und eine gültige E-Mail an.", "status.mailto": "Ihr E-Mail-Programm wird geöffnet…", "status.ok": "Nachricht gesendet. Wir melden uns bald. Vielen Dank!", "status.err": "Senden derzeit nicht möglich. Bitte schreiben Sie an contato@studiokephra.org."
       }
     };
     const LANG_LABEL = { en: "EN", pt: "PT", es: "ES", de: "DE" };
@@ -765,9 +832,31 @@
 
     /* ===== Header scroll opacity ===== */
     const header = document.getElementById("header");
-    const onScroll = () => header.classList.toggle("scrolled", window.scrollY > 24);
+    const toTop = document.getElementById("toTop");
+    toTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+    const onScroll = () => {
+      header.classList.toggle("scrolled", window.scrollY > 24);
+      if (window.scrollY > 600) { toTop.hidden = false; toTop.classList.add("show"); }
+      else { toTop.classList.remove("show"); }
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
+
+    /* ===== Scrollspy: highlight active nav link ===== */
+    const spyLinks = [...document.querySelectorAll(".nav-links a[href^='#'], .mobile-menu a[href^='#']")];
+    const spyTargets = spyLinks
+      .map(a => document.getElementById(a.getAttribute("href").slice(1)))
+      .filter(Boolean);
+    if ("IntersectionObserver" in window) {
+      const spy = new IntersectionObserver((entries) => {
+        entries.forEach(en => {
+          if (!en.isIntersecting) return;
+          const id = en.target.id;
+          spyLinks.forEach(a => a.classList.toggle("active", a.getAttribute("href") === "#" + id));
+        });
+      }, { rootMargin: "-45% 0px -50% 0px", threshold: 0 });
+      spyTargets.forEach(t => spy.observe(t));
+    }
 
     /* ===== Mobile menu ===== */
     const menuToggle = document.getElementById("menuToggle");
@@ -848,13 +937,25 @@
       reveals.forEach(el => el.classList.add("in"));
     }
 
-    /* ===== Contact form ===== */
+    /* ===== Contact form (Google Apps Script + Sheets; mailto fallback) =====
+       Deploy the handler in gas/form-handler.gs and paste the /exec URL below.
+       See gas/README.md. Until then, submissions fall back to the email client. */
+    const GAS_ENDPOINT = "PLACEHOLDER"; // ← replace with your GAS web app /exec URL
+    const CONTACT_EMAIL = "contato@studiokephra.org";
     const form = document.getElementById("contactForm");
     const statusEl = document.getElementById("formStatus");
+
+    function mailtoFallback(dict) {
+      const d = new FormData(form);
+      const body = `Nome: ${d.get("nome")}%0D%0AE-mail: ${d.get("email")}%0D%0A${dict["form.company"]}: ${d.get("empresa") || ""}%0D%0A%0D%0A${d.get("mensagem") || ""}`;
+      window.location.href = `mailto:${CONTACT_EMAIL}?subject=Opus%20AI%20website%20contact&body=${body}`;
+      statusEl.classList.add("ok");
+      statusEl.textContent = dict["status.mailto"];
+    }
+
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
       const dict = I18N[currentLang];
-      const action = form.getAttribute("action");
       statusEl.className = "form-status";
       statusEl.textContent = "";
 
@@ -864,21 +965,27 @@
         form.reportValidity();
         return;
       }
-      if (action.includes("PLACEHOLDER")) {
-        const d = new FormData(form);
-        const body = `Nome: ${d.get("nome")}%0D%0AE-mail: ${d.get("email")}%0D%0A${dict["form.company"]}: ${d.get("empresa") || ""}%0D%0A%0D%0A${d.get("mensagem") || ""}`;
-        window.location.href = `mailto:contato@opusai.com.br?subject=Opus%20AI%20website%20contact&body=${body}`;
-        statusEl.classList.add("ok");
-        statusEl.textContent = dict["status.mailto"];
-        return;
-      }
+
+      if (GAS_ENDPOINT === "PLACEHOLDER") { mailtoFallback(dict); return; }
+
       try {
-        const res = await fetch(action, { method: "POST", body: new FormData(form), headers: { "Accept": "application/json" } });
+        const d = new FormData(form);
+        const payload = {
+          nome: d.get("nome"), email: d.get("email"),
+          empresa: d.get("empresa") || "", mensagem: d.get("mensagem") || "",
+          lang: currentLang, source: "opus-ai-website"
+        };
+        const res = await fetch(GAS_ENDPOINT, {
+          method: "POST",
+          body: JSON.stringify(payload),
+          headers: { "Content-Type": "text/plain;charset=utf-8" },
+          redirect: "follow"
+        });
         if (res.ok) { form.reset(); statusEl.classList.add("ok"); statusEl.textContent = dict["status.ok"]; }
-        else { throw new Error("fail"); }
+        else { throw new Error("bad status"); }
       } catch (err) {
-        statusEl.classList.add("err");
-        statusEl.textContent = dict["status.err"];
+        // Network/CORS failure — never lose the message: fall back to the email client.
+        mailtoFallback(dict);
       }
     });
 
