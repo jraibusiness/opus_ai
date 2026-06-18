@@ -940,7 +940,7 @@
     /* ===== Contact form (Google Apps Script + Sheets; mailto fallback) =====
        Deploy the handler in gas/form-handler.gs and paste the /exec URL below.
        See gas/README.md. Until then, submissions fall back to the email client. */
-    const GAS_ENDPOINT = "PLACEHOLDER"; // ← replace with your GAS web app /exec URL
+    const GAS_ENDPOINT = "https://script.google.com/macros/s/AKfycbz0GUbrPxL-xyH6bI3wV-CDYZ_qNwZU_myTjkTpPCSGPqXboNiAvyDwr79v-qj8jpDBSQ/exec";
     const CONTACT_EMAIL = "contato@studiokephra.org";
     const form = document.getElementById("contactForm");
     const statusEl = document.getElementById("formStatus");
@@ -975,16 +975,21 @@
           empresa: d.get("empresa") || "", mensagem: d.get("mensagem") || "",
           lang: currentLang, source: "opus-ai-website"
         };
-        const res = await fetch(GAS_ENDPOINT, {
+        // no-cors: GAS web apps redirect to a content URL we can't read cross-origin,
+        // so we send a "simple" request (text/plain, no preflight) and treat a
+        // non-throwing fetch as delivered. A throw (real network failure) → mailto.
+        await fetch(GAS_ENDPOINT, {
           method: "POST",
+          mode: "no-cors",
           body: JSON.stringify(payload),
           headers: { "Content-Type": "text/plain;charset=utf-8" },
           redirect: "follow"
         });
-        if (res.ok) { form.reset(); statusEl.classList.add("ok"); statusEl.textContent = dict["status.ok"]; }
-        else { throw new Error("bad status"); }
+        form.reset();
+        statusEl.classList.add("ok");
+        statusEl.textContent = dict["status.ok"];
       } catch (err) {
-        // Network/CORS failure — never lose the message: fall back to the email client.
+        // Network failure — never lose the message: fall back to the email client.
         mailtoFallback(dict);
       }
     });

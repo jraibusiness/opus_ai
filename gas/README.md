@@ -37,10 +37,11 @@ That's it. The first submission auto-creates a `Submissions` sheet with headers.
 
 ## Notes
 
-- The form posts JSON with `Content-Type: text/plain` to avoid a CORS
-  preflight; Apps Script reads it from `e.postData.contents`. If a browser
-  ever blocks reading the response, the site falls back to `mailto:` so the
-  message is never lost.
+- The form posts JSON with `Content-Type: text/plain` and `mode: 'no-cors'` —
+  a "simple" request with no CORS preflight; Apps Script reads it from
+  `e.postData.contents`. Because the response is opaque (unreadable
+  cross-origin), the site treats a non-throwing fetch as delivered; only a real
+  network failure falls back to `mailto:`.
 - To re-deploy after editing the script: **Deploy → Manage deployments →
   Edit → Version: New version → Deploy** (the `/exec` URL stays the same).
 - Optional spam protection: add a hidden honeypot field named
